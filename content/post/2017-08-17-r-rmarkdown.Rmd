@@ -50,7 +50,7 @@ Finally I chose the hugo-tranquilpeak theme, by [Thibaud Lepr&ecirc;tre](https:/
 
 The steps I followed were: 
 
-### Git & GitHub repos
+#### Git & GitHub repos
 
 - <span class="fa fa-github"></span> Setting a [GitHub](https://github.com/) repo with the name <span class="texttt">[USERNAME].github.io</span> (in my case <span class="texttt">aurora-mareviv.github.io</span>). See [this](https://help.github.com/articles/create-a-repo/) and [this](https://tclavelle.github.io/blog/blogdown_github/).  
 - Create a `git` repo in your machine:
@@ -66,7 +66,7 @@ The steps I followed were:
 
 - For now, your repo is ready. We will focus now in creating & customising our Blogdown.
 
-### RStudio and <span class="texttt">blogdown</span>
+#### RStudio and <span class="texttt">blogdown</span>
 
 - We will open RStudio (v 1.1.336, [development](https://www.rstudio.com/products/rstudio/download/preview/) version as of today). 
 
