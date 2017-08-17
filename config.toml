@@ -36,8 +36,8 @@ publishDir = "."
 
 [author]
   name = "Tales of R Blog"
-  bio = "aurora-mareviv - Data Geek"
-  job = "MD, PhD"
+  bio = "aurora-mareviv"
+  job = "Data Geek, MD, PhD"
   location = "Spain"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   gravatarEmail = ""
