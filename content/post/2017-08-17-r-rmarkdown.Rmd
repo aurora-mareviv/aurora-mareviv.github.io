@@ -282,7 +282,7 @@ ggplot(diamonds, aes(x=carat, y=price, color=clarity)) + geom_point()
 
 # Rmd source code
 
-You can download it from [here]()
+You can download it from [here](https://github.com/aurora-mareviv/aurora-mareviv.github.io/blob/master/content/post/2017-08-17-r-rmarkdown.Rmd)
 
 <div id="welcome" class="well text-center alert alert-gray"><h3>Welcome to the era of reproducible blogging!</h3></div>
 
