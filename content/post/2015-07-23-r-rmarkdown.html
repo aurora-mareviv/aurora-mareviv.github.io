@@ -1,16 +1,30 @@
 ---
 title: "Hello R Markdown"
-author: "Frida Gomam"
+author: "Aurora Baluja"
 date: 2015-07-23T21:13:14-05:00
 categories: ["R"]
-tags: ["R Markdown", "plot", "regression"]
----
+tags: ["R Markdown", "plot", "#rstats"]
+thumbnailImagePosition: left
+thumbnailImage: ./images/logo.png
+coverImage: ./logo1.png
+metaAlignment: center
+disable_comments: true
+output:
+  blogdown::html_page:
+    toc: false
+    fig_width: 8
+    css: "/css/my-style.css"
+--- 
 
+  <link rel="stylesheet" href="/css/my-style.css" type="text/css" />
 
 
 <div id="r-markdown" class="section level1">
 <h1>R Markdown</h1>
 <p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<div class="well alert-danger">
+<p>Hola</p>
+</div>
 <p>You can embed an R code chunk like this:</p>
 <pre class="r"><code>summary(cars)
 ##      speed           dist       
@@ -41,7 +55,7 @@ pie(
   init.angle = -50, border = NA
 )</code></pre>
 <div class="figure"><span id="fig:pie"></span>
-<img src="/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
+<img src="/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="768" />
 <p class="caption">
 Figure 1: A fancy pie chart.
 </p>
