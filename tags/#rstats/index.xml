@@ -12,15 +12,14 @@
     
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>/2017/08/hello-r-markdown/</link>
+      <title>R Blogdown Setup in GiHub</title>
+      <link>/2017/08/r-blogdown-setup-in-gihub/</link>
       <pubDate>Thu, 17 Aug 2017 21:13:14 -0500</pubDate>
       
-      <guid>/2017/08/hello-r-markdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-Hola
- You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.</description>
+      <guid>/2017/08/r-blogdown-setup-in-gihub/</guid>
+      <description>The blogdown R package  Finally, -after 24h of failed attempts-, I could get my favourite Hugo theme up and running with R Studio and Blogdown.
+After exploring some alternatives, like Shirin’s (with Jekyll), and Amber Thomas advice (which involved Git skills beyond my basic abilities), I was able to install the Hugo Yihui’s lithium theme in a new repository.
+However, I wanted to explore other blog templates, hosted in GiHub, like:</description>
     </item>
     
   </channel>

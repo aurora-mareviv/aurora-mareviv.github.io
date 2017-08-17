@@ -1,9 +1,9 @@
 ---
-title: "Hello R Markdown"
+title: "R Blogdown Setup in GiHub"
 author: "Aurora Baluja"
 date: 2017-08-17T21:13:14-05:00
 categories: ["R"]
-tags: ["R Markdown", "plot", "#rstats"]
+tags: ["R Markdown", "plot", "blogdown", "#rstats"]
 thumbnailImagePosition: left
 thumbnailImage: ./images/logo.png
 coverImage: ./logo1.png
@@ -22,13 +22,154 @@ output:
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# R Markdown
+# The <span style="font-family: monospace">blogdown</span> R package &nbsp; <span class="fa fa-newspaper-o"></span>
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Finally, -after 24h of failed attempts-, I could get my favourite [Hugo theme](https://github.com/kakawait/hugo-tranquilpeak-theme) up and running with R Studio and [Blogdown](https://bookdown.org/yihui/blogdown/).   
 
-<div class="well alert-danger">
-Hola
+After exploring some alternatives, like 
+[Shirin's](https://shiring.github.io/blogging/2016/12/04/diy_your_own_blog) (with Jekyll), and 
+[Amber Thomas](https://proquestionasker.github.io/blog/Making_Site/) advice (which involved Git skills beyond my basic abilities), 
+I was able to install the Hugo Yihui's [lithium theme](https://github.com/yihui/hugo-lithium-theme) in a new repository.  
+
+However, I wanted to explore other blog templates, hosted in GiHub, like:   
+
+- [gcushen/hugo-academic](https://sourcethemes.com/academic/) 
+- [jpescador/hugo-future-imperfect](https://jpescador.com/) and 
+- [kakawait/hugo-tranquilpeak-theme](https://tranquilpeak.kakawait.com/)
+- Or this one [kishaningithub/hugo-creative-portfolio-theme](https://themes.gohugo.io/theme/hugo-creative-portfolio-theme/)
+
+The three first themes are currently linked in the [blogdown](https://bookdown.org/yihui/blogdown/other-themes.html) documentation as being most simple and easy to set up for unexperienced blog programmers, but I hope the list will grow in the following months. For those who are willing to experiment, the complete list is [here](https://themes.gohugo.io/).  
+
+Finally I chose the hugo-tranquilpeak theme, by [Thibaud Lepr&ecirc;tre](https://github.com/kakawait), for which I mostly followed Tyler Clavelle's [entry](https://tclavelle.github.io/blog/blogdown_github/) on the topic. This approach turned out to be easy and good, given some conditions:   
+
+- Contrary to Yihui Xie's [advice](https://bookdown.org/yihui/blogdown/deployment.html), I chose github.io to host my blog, instead of Netlify (I love my desktop integration with GitHub, so it was interesting for me not to move to another service for my static content). 
+- In my machine, I installed Blogdown & Hugo from R studio (v 1.1.336) the usual way. 
+- In GiHub, it was easier for me to host the blog directly in my main github pages repository (always named <span style="font-family: monospace">[USERNAME].github.io</span>), in the <span style="font-family: monospace">master</span> branch. 
+- I have basic knowledge of html, css and javascript, so I didn't mind to tinker around with the theme.
+- However my custom styles didn't involve theme [rebuilding](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#quick--easy-modifications), as at this moment they're simple cosmetic tricks. 
+
+The steps I followed were: 
+
+- <span class="fa fa-github"></span> Setting a [GitHub](https://github.com/) repo with the name <span style="font-family: monospace">[USERNAME].github.io</span> (in my case <span style="font-family: monospace">aurora-mareviv.github.io</span>). See [this](https://help.github.com/articles/create-a-repo/) and [this](https://tclavelle.github.io/blog/blogdown_github/).  
+- Create a `git` repo in your machine:
+    + Create manually a new directory called <span style="font-family: monospace">[USERNAME].github.io</span>. 
+    + Run in the terminal:  
+    
+    ```{bash eval=FALSE}
+    cd /Git/[USERNAME].github.io # your path may be different
+    git init # initiates repo in the directory
+    git remote add origin https://github.com/[USERNAME]/[USERNAME].github.io # connects git local repo to remote Github repo
+    git pull origin master # in case you have LICENSE and Readme.md files in the GitHub repo, they're downloaded
+    ``` 
+
+- For now, your repo is ready. We will focus now in creating & customising our Blogdown.
+- We will open RStudio (v 1.1.336, [development](https://www.rstudio.com/products/rstudio/download/preview/) version as of today). 
+
+    + First, you may need to install bookdown in R:
+    
+    ```{r eval=FALSE}
+    install.packages("bookdown")
+    ``` 
+    
+    + In RStudio, select the *Menu > File > New Project* following the lower half of these [instructions](https://bookdown.org/yihui/blogdown/rstudio-ide.html). The wizard for setting up a Hugo Blogdown project may not be yet available in your RStudio version (not for much longer probably).  
+
+![Creating new Project](/images/tuto/tuto1.png)
+
+![Selecting Hugo Blogdown format](/images/tuto/tuto2.png)
+
+![Selecting Hugo Blogdown format](/images/tuto/tuto3.png)
+
+![A **config.toml** file appears](/images/tuto/tuto4a.png)
+
+<hr>
+
+# Customising paths and styles
+
+Before we <span style="font-family: monospace">build</span> and <span style="font-family: monospace">serve</span> our site, we need to tweak a couple of things in advance, if we want to smoothly deploy our blog into GitHub pages.  
+
+### Modify <span style="font-family: monospace">config.toml</span> file
+
+To integrate with GiHub pages, there are the essential modifications at the top of our *config.toml* file: 
+
+- We need to set up the base URL to the "root" of the web page (https://[USERNAME].github.io/ in this case)
+- By default, the web page is published in the "public" folder. We need it to be published in the root of the repository, to match the structure of the GitHub <span style="font-family: monospace">master</span> branch:  
+
+```{r eval=FALSE}
+baseurl = "/"
+publishDir = "."
+```
+
+- Other useful global settings:  
+
+```{r eval=FALSE}
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+enableEmoji = true
+```
+
+#### Images & styling paths
+
+We can revisit the *config.toml* file to make changes to the default settings.  
+
+The logo that appears in the corner must be in the root folder. To modify it in the *config.toml*:  
+
+```{r eval=FALSE}
+picture = "logo.png" # the path to the logo
+```
+
+The cover (background) image must be located in <span style="font-family: monospace"> /themes/hugo-tranquilpeak-theme/static/images </span>. To modify it in the *config.toml*:  
+
+```{r eval=FALSE}
+coverImage = "myimage.jpg"
+```
+
+We want some custom css and js. We need to locate it in <span style="font-family: monospace"> /static/css </span> and in <span style="font-family: monospace"> /static/js </span> respectively.
+
+```{r eval=FALSE}
+# Custom CSS. Put here your custom CSS files. They are loaded after the theme CSS;
+# they have to be referred from static root. Example
+customCSS = ["css/my-style.css"]
+
+# Custom JS. Put here your custom JS files. They are loaded after the theme JS;
+# they have to be referred from static root. Example
+customJS = ["js/myjs.js"]
+```
+
+
+### Custom css
+
+We can add arbitrary classes to our *css* file (see above).
+
+Since I started writing in Bootstrap, I miss it a lot. Since this theme already has bootstrap classes, I brought some others I didn't find in the theme (okay, they're [available](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md) for *.md* files, but currently not for *.Rmd*)
+
+<div class="well alert-danger text-center">
+<span class="fa fa-minus-circle"></span> alert-danger
 </div>
+
+<div class="well alert-success text-center">
+<span class="fa fa-check-circle"></span> alert-success
+</div>
+
+<div class="well alert-info text-center">
+<span class="fa fa-info-circle"></span> alert-info
+</div>
+
+```{r eval=FALSE}
+
+```
+
+```{r eval=FALSE}
+
+```
+
+<hr>
+
+
+
+
+
+
+
+
 
 You can embed an R code chunk like this:
 
@@ -51,4 +192,7 @@ pie(
   init.angle = -50, border = NA
 )
 ```
+
+<div id="welcome" class="jumbotron text-center alert-info"><h1>Welcome to the era of reproducible blogging!</h1></div>
+
 

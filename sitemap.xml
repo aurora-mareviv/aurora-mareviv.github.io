@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2017/08/hello-r-markdown/</loc>
+    <loc>/2017/08/r-blogdown-setup-in-gihub/</loc>
     <lastmod>2017-08-17T21:13:14-05:00</lastmod>
   </url>
   
@@ -15,6 +15,12 @@
   
   <url>
     <loc>/archives/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/blogdown/</loc>
+    <lastmod>2017-08-17T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   

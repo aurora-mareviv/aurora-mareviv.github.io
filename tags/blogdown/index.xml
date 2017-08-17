@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Tales of R - Rmarkdown Blog </title>
-    <link>/post/</link>
-    <description>Recent content in Posts on Tales of R - Rmarkdown Blog </description>
+    <title>Blogdown on Tales of R - Rmarkdown Blog </title>
+    <link>/tags/blogdown/</link>
+    <description>Recent content in Blogdown on Tales of R - Rmarkdown Blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 17 Aug 2017 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
