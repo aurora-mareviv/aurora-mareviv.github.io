@@ -20,9 +20,9 @@ output:
 
 
 <div id="the-blogdown-r-package" class="section level1">
-<h1>The <span style="font-family: monospace">blogdown</span> R package   <span class="fa fa-newspaper-o"></span></h1>
+<h1>The <span class="texttt">blogdown</span> R package   <span class="fa fa-newspaper-o"></span></h1>
 <p>Finally, -after 24h of failed attempts-, I could get my favourite <a href="https://github.com/kakawait/hugo-tranquilpeak-theme">Hugo theme</a> up and running with R Studio and <a href="https://bookdown.org/yihui/blogdown/">Blogdown</a>.</p>
-<p>After exploring some alternatives, like <a href="https://shiring.github.io/blogging/2016/12/04/diy_your_own_blog">Shirin’s</a> (with Jekyll), and <a href="https://proquestionasker.github.io/blog/Making_Site/">Amber Thomas</a> advice (which involved Git skills beyond my basic abilities), I was able to install the Hugo Yihui’s <a href="https://github.com/yihui/hugo-lithium-theme">lithium theme</a> in a new repository.</p>
+<p>After exploring some alternatives, like <a href="https://shiring.github.io/blogging/2016/12/04/diy_your_own_blog">Shirin’s</a> (with Jekyll), and <a href="https://proquestionasker.github.io/blog/Making_Site/">Amber Thomas</a> advice (which involved Git skills beyond my basic abilities), I was able to install Yihui’s <a href="https://github.com/yihui/hugo-lithium-theme">hugo-lithium-theme</a> in a new repository.</p>
 <p>However, I wanted to explore other blog templates, hosted in GiHub, like:</p>
 <ul>
 <li><a href="https://sourcethemes.com/academic/">gcushen/hugo-academic</a></li>
@@ -33,19 +33,21 @@ output:
 <p>The three first themes are currently linked in the <a href="https://bookdown.org/yihui/blogdown/other-themes.html">blogdown</a> documentation as being most simple and easy to set up for unexperienced blog programmers, but I hope the list will grow in the following months. For those who are willing to experiment, the complete list is <a href="https://themes.gohugo.io/">here</a>.</p>
 <p>Finally I chose the hugo-tranquilpeak theme, by <a href="https://github.com/kakawait">Thibaud Leprêtre</a>, for which I mostly followed Tyler Clavelle’s <a href="https://tclavelle.github.io/blog/blogdown_github/">entry</a> on the topic. This approach turned out to be easy and good, given some conditions:</p>
 <ul>
-<li>Contrary to Yihui Xie’s <a href="https://bookdown.org/yihui/blogdown/deployment.html">advice</a>, I chose github.io to host my blog, instead of Netlify (I love my desktop integration with GitHub, so it was interesting for me not to move to another service for my static content).</li>
-<li>In my machine, I installed Blogdown &amp; Hugo from R studio (v 1.1.336) the usual way.</li>
-<li>In GiHub, it was easier for me to host the blog directly in my main github pages repository (always named <span style="font-family: monospace">[USERNAME].github.io</span>), in the <span style="font-family: monospace">master</span> branch.</li>
+<li>Instead of Yihui Xie’s <a href="https://bookdown.org/yihui/blogdown/deployment.html">advice</a>, I chose github.io to host my blog, instead of Netlify (I love my desktop integration with GitHub, so it was interesting for me not to move to another service for my static content).</li>
+<li>In my machine, I installed Blogdown &amp; Hugo using R studio (v 1.1.336).</li>
+<li>In GiHub, it was easier for me to host the blog directly in my main github pages repository (always named <span class="texttt">[USERNAME].github.io</span>), in the <span class="texttt">master</span> branch.</li>
 <li>I have basic knowledge of html, css and javascript, so I didn’t mind to tinker around with the theme.</li>
-<li>However my custom styles didn’t involve theme <a href="https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#quick--easy-modifications">rebuilding</a>, as at this moment they’re simple cosmetic tricks.</li>
+<li>My custom styles didn’t involve theme <a href="https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#quick--easy-modifications">rebuilding</a>. At this moment they’re simple cosmetic tricks.</li>
 </ul>
 <p>The steps I followed were:</p>
+<div id="git-github-repos" class="section level3">
+<h3>Git &amp; GitHub repos</h3>
 <ul>
-<li><span class="fa fa-github"></span> Setting a <a href="https://github.com/">GitHub</a> repo with the name <span style="font-family: monospace">[USERNAME].github.io</span> (in my case <span style="font-family: monospace">aurora-mareviv.github.io</span>). See <a href="https://help.github.com/articles/create-a-repo/">this</a> and <a href="https://tclavelle.github.io/blog/blogdown_github/">this</a>.<br />
+<li><span class="fa fa-github"></span> Setting a <a href="https://github.com/">GitHub</a> repo with the name <span class="texttt">[USERNAME].github.io</span> (in my case <span class="texttt">aurora-mareviv.github.io</span>). See <a href="https://help.github.com/articles/create-a-repo/">this</a> and <a href="https://tclavelle.github.io/blog/blogdown_github/">this</a>.<br />
 </li>
 <li>Create a <code>git</code> repo in your machine:
 <ul>
-<li>Create manually a new directory called <span style="font-family: monospace">[USERNAME].github.io</span>.</li>
+<li>Create manually a new directory called <span class="texttt">[USERNAME].github.io</span>.</li>
 <li>Run in the terminal:</li>
 </ul>
 <pre class="bash"><code>cd /Git/[USERNAME].github.io # your path may be different
@@ -53,6 +55,11 @@ git init # initiates repo in the directory
 git remote add origin https://github.com/[USERNAME]/[USERNAME].github.io # connects git local repo to remote Github repo
 git pull origin master # in case you have LICENSE and Readme.md files in the GitHub repo, they&#39;re downloaded</code></pre></li>
 <li>For now, your repo is ready. We will focus now in creating &amp; customising our Blogdown.</li>
+</ul>
+</div>
+<div id="rstudio-and-blogdown" class="section level3">
+<h3>RStudio and <span class="texttt">blogdown</span></h3>
+<ul>
 <li><p>We will open RStudio (v 1.1.336, <a href="https://www.rstudio.com/products/rstudio/download/preview/">development</a> version as of today).</p>
 <ul>
 <li>First, you may need to install bookdown in R:</li>
@@ -80,15 +87,16 @@ git pull origin master # in case you have LICENSE and Readme.md files in the Git
 </div>
 <hr>
 </div>
+</div>
 <div id="customising-paths-and-styles" class="section level1">
 <h1>Customising paths and styles</h1>
-<p>Before we <span style="font-family: monospace">build</span> and <span style="font-family: monospace">serve</span> our site, we need to tweak a couple of things in advance, if we want to smoothly deploy our blog into GitHub pages.</p>
+<p>Before we <span class="texttt">build</span> and <span class="texttt">serve</span> our site, we need to tweak a couple of things in advance, if we want to smoothly deploy our blog into GitHub pages.</p>
 <div id="modify-config.toml-file" class="section level3">
-<h3>Modify <span style="font-family: monospace">config.toml</span> file</h3>
+<h3>Modify <span class="texttt">config.toml</span> file</h3>
 <p>To integrate with GiHub pages, there are the essential modifications at the top of our <em>config.toml</em> file:</p>
 <ul>
 <li>We need to set up the base URL to the “root” of the web page (<a href="https://%5BUSERNAME%5D.github.io/" class="uri">https://[USERNAME].github.io/</a> in this case)</li>
-<li>By default, the web page is published in the “public” folder. We need it to be published in the root of the repository, to match the structure of the GitHub <span style="font-family: monospace">master</span> branch:</li>
+<li>By default, the web page is published in the “public” folder. We need it to be published in the root of the repository, to match the structure of the GitHub <span class="texttt">master</span> branch:</li>
 </ul>
 <pre class="r"><code>baseurl = &quot;/&quot;
 publishDir = &quot;.&quot;</code></pre>
@@ -102,9 +110,9 @@ enableEmoji = true</code></pre>
 <p>We can revisit the <em>config.toml</em> file to make changes to the default settings.</p>
 <p>The logo that appears in the corner must be in the root folder. To modify it in the <em>config.toml</em>:</p>
 <pre class="r"><code>picture = &quot;logo.png&quot; # the path to the logo</code></pre>
-<p>The cover (background) image must be located in <span style="font-family: monospace"> /themes/hugo-tranquilpeak-theme/static/images </span>. To modify it in the <em>config.toml</em>:</p>
+<p>The cover (background) image must be located in <span class="texttt"> /themes/hugo-tranquilpeak-theme/static/images </span>. To modify it in the <em>config.toml</em>:</p>
 <pre class="r"><code>coverImage = &quot;myimage.jpg&quot;</code></pre>
-<p>We want some custom css and js. We need to locate it in <span style="font-family: monospace"> /static/css </span> and in <span style="font-family: monospace"> /static/js </span> respectively.</p>
+<p>We want some custom css and js. We need to locate it in <span class="texttt"> /static/css </span> and in <span class="texttt"> /static/js </span> respectively.</p>
 <pre class="r"><code># Custom CSS. Put here your custom CSS files. They are loaded after the theme CSS;
 # they have to be referred from static root. Example
 customCSS = [&quot;css/my-style.css&quot;]
@@ -118,55 +126,125 @@ customJS = [&quot;js/myjs.js&quot;]</code></pre>
 <h3>Custom css</h3>
 <p>We can add arbitrary classes to our <em>css</em> file (see above).</p>
 <p>Since I started writing in Bootstrap, I miss it a lot. Since this theme already has bootstrap classes, I brought some others I didn’t find in the theme (okay, they’re <a href="https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md">available</a> for <em>.md</em> files, but currently not for <em>.Rmd</em>)</p>
-<div class="well alert-danger text-center">
+<div class="well alert alert-danger text-center">
 <p><span class="fa fa-minus-circle"></span> alert-danger</p>
 </div>
-<div class="well alert-success text-center">
+<div class="well alert alert-success text-center">
 <p><span class="fa fa-check-circle"></span> alert-success</p>
 </div>
-<div class="well alert-info text-center">
+<div class="well alert alert-info text-center">
 <p><span class="fa fa-info-circle"></span> alert-info</p>
 </div>
+<p>Here is my custom <em>css</em> file to date:</p>
+<pre class="bash"><code>/* @import url(&#39;https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css&#39;); may conflict with default theme*/
+@import url(&#39;https://fonts.googleapis.com/icon?family=Material+Icons&#39;); /*google icons*/
+@import url(&#39;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css&#39;); /*font awesome icons*/
+
+.input-lg {
+  font-size: 30px;
+}
+.input {
+  font-size: 20px;
+}
+.font-sm {
+    font-size: 0.7em;
+}
+.texttt {
+  font-family: monospace;
+}
+.alert {
+padding: 15px;
+margin-bottom: 20px;
+border: 1px solid transparent;
+border-radius: 4px;
+}
+.alert-success {
+color: #3c763d;
+background-color: #dff0d8;
+border-color: #d6e9c6;
+}
+.alert-danger,
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+.alert-info {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+/*style for printing*/
+@media print {
+    .noPrint {
+       display:none;
+   }
+    }
+
+/*link formatting*/
+a:link {
+    color: #478ca7;
+    text-decoration: none;
+} 
+a:visited {
+    color: #478ca7;
+    text-decoration: none;
+}
+a:hover {
+    color: #82b5c9;
+    text-decoration: none;
+}</code></pre>
+<p>An example of the <span style="font-family:monospace; color:#b94a48"> alert-danger </span> class:</p>
+<pre class="c"><code>&lt;div class=&quot;well alert alert-danger text-center&quot;&gt;
+&lt;span class=&quot;fa fa-minus-circle&quot;&gt;&lt;/span&gt; alert-danger
+&lt;/div&gt;</code></pre>
+<p>Also, we have <a href="http://fontawesome.io/icons/">font-awesome</a> icons! <span class="fa fa-gift"></span></p>
+</div>
+</div>
+<div id="site-build-with-blogdown" class="section level1">
+<h1>Site build with <span class="texttt"> blogdown </span></h1>
+<p>Once we have ready our theme, we can add some content, modifying or deleting the various examples we will find in <span class="texttt"> /content/post </span></p>
+<p>After finishing some content, we need to make use of Blogdown &amp; Hugo to compile our <em>.Rmd</em> file and create our <em>html</em> post:</p>
+<pre class="r"><code>blogdown::build_site()
+blogdown::serve_site()</code></pre>
+<p>In the viewer at the right side of the IDE you can examine the resulting <em>html</em> and see if something didn’t go OK</p>
+</div>
+<div id="deploying-the-site" class="section level1">
+<h1>Deploying the site</h1>
+<div id="updating-the-local-git-repository" class="section level4">
+<h4>Updating the local <span class="texttt"> git </span> repository</h4>
+<p>This can be done with simple git commands:</p>
+<pre class="bash"><code>cd /Git/[USERNAME].github.io # your path to the repo may be different
+git add . # indexes all files that wil be added to the local repo
+git commit -m &quot;Starting my Hugo blog&quot; # adds all files to the local repo, with a commit message</code></pre>
+</div>
+<div id="pushing-to-github" class="section level4">
+<h4>Pushing to GitHub</h4>
+<pre class="bash"><code>git push origin master # we push the changes of the local git repo to the remote repo (GitHub repo)</code></pre>
+<p>Just go to the page <span class="texttt"><a href="https://%5BUSERNAME%5D.github.io" class="uri">https://[USERNAME].github.io</a></span> and enjoy your blog!</p>
 <hr>
-<p>You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932</code></pre>
 </div>
 </div>
-<div id="including-plots" class="section level1">
-<h1>Including Plots</h1>
-<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
-<pre class="r"><code>par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
-  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
-  init.angle = -50, border = NA
-)</code></pre>
-<div class="figure"><span id="fig:pie"></span>
-<img src="/post/2017-08-17-r-rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="768" />
+<div id="r-code" class="section level1">
+<h1>R code</h1>
+<p>Works just the same as in Rmarkdown. R code is compiled into an <em>html</em> and published as static web content in few steps!</p>
+<p>The figure <a href="#fig:diamond">1</a> uses the <code>ggplot2</code> library:</p>
+<pre class="r"><code>library(ggplot2)
+ggplot(diamonds, aes(x=carat, y=price, color=clarity)) + geom_point()</code></pre>
+<div class="figure"><span id="fig:diamond"></span>
+<img src="/post/2017-08-17-r-rmarkdown_files/figure-html/diamond-1.png" alt="diamonds plot with ggplot2." width="768" />
 <p class="caption">
-Figure 1: A fancy pie chart.
+Figure 1: diamonds plot with ggplot2.
 </p>
 </div>
-<div id="welcome" class="jumbotron text-center alert-info">
-<h1>
+</div>
+<div id="rmd-source-code" class="section level1">
+<h1>Rmd source code</h1>
+<p>You can download it from <a href="">here</a></p>
+<div id="welcome" class="well text-center alert alert-gray">
+<h3>
 Welcome to the era of reproducible blogging!
-</h1>
+</h3>
 </div>
 </div>
