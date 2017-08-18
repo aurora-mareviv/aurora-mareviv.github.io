@@ -24,7 +24,7 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 # The <span class="texttt">blogdown</span> R package &nbsp; <span class="fa fa-newspaper-o"></span> 
 
-Finally, -after 24h of failed attempts-, I could get my favourite [Hugo theme](https://github.com/kakawait/hugo-tranquilpeak-theme) up and running with R Studio and [Blogdown](https://bookdown.org/yihui/blogdown/).   
+Finally, -after 24h of failed attempts-, I could get my favourite [Hugo](https://gohugo.io/) [theme](https://github.com/kakawait/hugo-tranquilpeak-theme) up and running with R Studio and [Blogdown](https://bookdown.org/yihui/blogdown/).   
 
 After exploring some alternatives, like 
 [Shirin's](https://shiring.github.io/blogging/2016/12/04/diy_your_own_blog) (with Jekyll), and 
