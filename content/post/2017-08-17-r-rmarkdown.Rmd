@@ -5,7 +5,7 @@ date: 2017-08-17T21:13:14-05:00
 categories: ["R"]
 tags: ["R Markdown", "plot", "blogdown", "#rstats"]
 thumbnailImagePosition: left
-thumbnailImage: ./images/logo.png
+thumbnailImage: ./images/hexbins.png
 coverImage: ./logo1.png
 metaAlignment: center
 disable_comments: true
@@ -42,7 +42,7 @@ The three first themes are currently linked in the [blogdown](https://bookdown.o
 
 Finally I chose the hugo-tranquilpeak theme, by [Thibaud Lepr&ecirc;tre](https://github.com/kakawait), for which I mostly followed Tyler Clavelle's [entry](https://tclavelle.github.io/blog/blogdown_github/) on the topic. This approach turned out to be easy and good, given some conditions:   
 
-- Instead of Yihui Xie's [advice](https://bookdown.org/yihui/blogdown/deployment.html), I chose github.io to host my blog, instead of Netlify (I love my desktop integration with GitHub, so it was interesting for me not to move to another service for my static content). 
+- Contrary to Yihui Xie's [advice](https://bookdown.org/yihui/blogdown/deployment.html), I chose github.io to host my blog, instead of Netlify (I love my desktop integration with GitHub, so it was interesting for me not to move to another service for my static content). 
 - In my machine, I installed Blogdown & Hugo using R studio (v 1.1.336). 
 - In GiHub, it was easier for me to host the blog directly in my main github pages repository (always named <span class="texttt">[USERNAME].github.io</span>), in the <span class="texttt">master</span> branch. 
 - I have basic knowledge of html, css and javascript, so I didn't mind to tinker around with the theme.
@@ -55,7 +55,7 @@ The steps I followed were:
 - <span class="fa fa-github"></span> Setting a [GitHub](https://github.com/) repo with the name <span class="texttt">[USERNAME].github.io</span> (in my case <span class="texttt">aurora-mareviv.github.io</span>). See [this](https://help.github.com/articles/create-a-repo/) and [this](https://tclavelle.github.io/blog/blogdown_github/).  
 - Create a `git` repo in your machine:
     + Create manually a new directory called <span class="texttt">[USERNAME].github.io</span>. 
-    + Run in the terminal:  
+    + Run in the terminal (Windows users have to install [`git`](https://git-scm.com/downloads) first):  
     
     ```{bash eval=FALSE}
     cd /Git/[USERNAME].github.io # your path may be different
@@ -64,16 +64,16 @@ The steps I followed were:
     git pull origin master # in case you have LICENSE and Readme.md files in the GitHub repo, they're downloaded
     ``` 
 
-- For now, your repo is ready. We will focus now in creating & customising our Blogdown.
+- For now, your repo is ready. We will now focus in creating & customising our Blogdown.
 
 #### RStudio and <span class="texttt">blogdown</span>
 
 - We will open RStudio (v 1.1.336, [development](https://www.rstudio.com/products/rstudio/download/preview/) version as of today). 
 
-    + First, you may need to install bookdown in R:
+    + First, you may need to install Blogdown in R:
     
     ```{r eval=FALSE}
-    install.packages("bookdown")
+    install.packages("blogdown")
     ``` 
     
     + In RStudio, select the *Menu > File > New Project* following the lower half of these [instructions](https://bookdown.org/yihui/blogdown/rstudio-ide.html). The wizard for setting up a Hugo Blogdown project may not be yet available in your RStudio version (not for much longer probably).  
@@ -82,7 +82,7 @@ The steps I followed were:
 
 ![Selecting Hugo Blogdown format](/images/tuto/tuto2.png)
 
-![Selecting Hugo Blogdown format](/images/tuto/tuto3.png)
+![Selecting Hugo Blogdown theme](/images/tuto/tuto3.png)
 
 ![A **config.toml** file appears](/images/tuto/tuto4a.png)
 
@@ -144,7 +144,7 @@ customJS = ["js/myjs.js"]
 
 We can add arbitrary classes to our *css* file (see above).
 
-Since I started writing in Bootstrap, I miss it a lot. Since this theme already has bootstrap classes, I brought some others I didn't find in the theme (okay, they're [available](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md) for *.md* files, but currently not for *.Rmd*)
+Since I started writing in Bootstrap, I miss it a lot. Since this theme already has bootstrap classes, I brought some others I didn't find in the theme (they're [available](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md) for *.md* files, but currently not for *.Rmd*)
 
 <div class="well alert alert-danger text-center">
 <span class="fa fa-minus-circle"></span> alert-danger
@@ -230,7 +230,7 @@ An example of the <span style="font-family:monospace; color:#b94a48"> alert-dang
 
 ```{c eval=FALSE}
 <div class="well alert alert-danger text-center">
-<span class="fa fa-minus-circle"></span> alert-danger
+  <span class="fa fa-minus-circle"></span> alert-danger
 </div>
 ```
 
@@ -239,16 +239,16 @@ Also, we have [font-awesome](http://fontawesome.io/icons/) icons! <span class="f
 
 # Site build with <span class="texttt"> blogdown </span>
 
-Once we have ready our theme, we can add some content, modifying or deleting the various examples we will find in <span class="texttt"> /content/post </span>
+Once we have ready our theme, we can add some content, modifying or deleting the various examples we will find in <span class="texttt"> /content/post </span>.
 
-After finishing some content, we need to make use of Blogdown & Hugo to compile our *.Rmd* file and create our *html* post:
+We need to make use of Blogdown & Hugo to compile our *.Rmd* file and create our *html* post:
 
 ```{r eval=FALSE}
 blogdown::build_site()
 blogdown::serve_site()
 ```
 
-In the viewer at the right side of the IDE you can examine the resulting *html* and see if something didn't go OK
+In the viewer, at the right side of the IDE you can examine the resulting *html* and see if something didn't go OK.
 
 # Deploying the site
 
@@ -265,7 +265,7 @@ git commit -m "Starting my Hugo blog" # adds all files to the local repo, with a
 #### Pushing to GitHub
 
 ```{bash eval=FALSE}
-git push origin master # we push the changes of the local git repo to the remote repo (GitHub repo)
+git push origin master # we push the changes from the local git repo to the remote repo (GitHub repo)
 ``` 
 
 Just go to the page <span class="texttt">https://[USERNAME].github.io</span> and enjoy your blog!
@@ -275,7 +275,7 @@ Just go to the page <span class="texttt">https://[USERNAME].github.io</span> and
 
 # R code
 
-Works just the same as in Rmarkdown. R code is compiled into an *html* and published as static web content in few steps!
+Works just the same as in Rmarkdown. R code is compiled into an *html* and published as static web content in few steps. Welcome to the era of reproducible blogging!  
 
 The figure \@ref(fig:diamond) uses the `ggplot2` library:
 
@@ -288,6 +288,9 @@ ggplot(diamonds, aes(x=carat, y=price, color=clarity)) + geom_point()
 
 You can download it from [here](https://github.com/aurora-mareviv/aurora-mareviv.github.io/blob/master/content/post/2017-08-17-r-rmarkdown.Rmd)
 
-<div id="welcome" class="well text-center alert alert-gray"><h3>Welcome to the era of reproducible blogging!</h3></div>
 
+# Next steps
 
+- Try to [migrate](http://justindunham.net/migrating-from-wordpress-to-hugo/) my [Wordpress blog](https://talesofr.wordpress.com/) into this one. Will it ever be possible?  
+
+![](/images/hexbins.png)

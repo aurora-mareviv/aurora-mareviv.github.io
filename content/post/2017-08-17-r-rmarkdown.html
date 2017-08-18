@@ -5,7 +5,7 @@ date: 2017-08-17T21:13:14-05:00
 categories: ["R"]
 tags: ["R Markdown", "plot", "blogdown", "#rstats"]
 thumbnailImagePosition: left
-thumbnailImage: ./images/logo.png
+thumbnailImage: ./images/hexbins.png
 coverImage: ./logo1.png
 metaAlignment: center
 disable_comments: true
@@ -33,7 +33,7 @@ output:
 <p>The three first themes are currently linked in the <a href="https://bookdown.org/yihui/blogdown/other-themes.html">blogdown</a> documentation as being most simple and easy to set up for unexperienced blog programmers, but I hope the list will grow in the following months. For those who are willing to experiment, the complete list is <a href="https://themes.gohugo.io/">here</a>.</p>
 <p>Finally I chose the hugo-tranquilpeak theme, by <a href="https://github.com/kakawait">Thibaud Leprêtre</a>, for which I mostly followed Tyler Clavelle’s <a href="https://tclavelle.github.io/blog/blogdown_github/">entry</a> on the topic. This approach turned out to be easy and good, given some conditions:</p>
 <ul>
-<li>Instead of Yihui Xie’s <a href="https://bookdown.org/yihui/blogdown/deployment.html">advice</a>, I chose github.io to host my blog, instead of Netlify (I love my desktop integration with GitHub, so it was interesting for me not to move to another service for my static content).</li>
+<li>Contrary to Yihui Xie’s <a href="https://bookdown.org/yihui/blogdown/deployment.html">advice</a>, I chose github.io to host my blog, instead of Netlify (I love my desktop integration with GitHub, so it was interesting for me not to move to another service for my static content).</li>
 <li>In my machine, I installed Blogdown &amp; Hugo using R studio (v 1.1.336).</li>
 <li>In GiHub, it was easier for me to host the blog directly in my main github pages repository (always named <span class="texttt">[USERNAME].github.io</span>), in the <span class="texttt">master</span> branch.</li>
 <li>I have basic knowledge of html, css and javascript, so I didn’t mind to tinker around with the theme.</li>
@@ -48,13 +48,13 @@ output:
 <li>Create a <code>git</code> repo in your machine:
 <ul>
 <li>Create manually a new directory called <span class="texttt">[USERNAME].github.io</span>.</li>
-<li>Run in the terminal:</li>
+<li>Run in the terminal (Windows users have to install <a href="https://git-scm.com/downloads"><code>git</code></a> first):</li>
 </ul>
 <pre class="bash"><code>cd /Git/[USERNAME].github.io # your path may be different
 git init # initiates repo in the directory
 git remote add origin https://github.com/[USERNAME]/[USERNAME].github.io # connects git local repo to remote Github repo
 git pull origin master # in case you have LICENSE and Readme.md files in the GitHub repo, they&#39;re downloaded</code></pre></li>
-<li>For now, your repo is ready. We will focus now in creating &amp; customising our Blogdown.</li>
+<li>For now, your repo is ready. We will now focus in creating &amp; customising our Blogdown.</li>
 </ul>
 </div>
 <div id="rstudio-and-blogdown" class="section level4">
@@ -62,9 +62,9 @@ git pull origin master # in case you have LICENSE and Readme.md files in the Git
 <ul>
 <li><p>We will open RStudio (v 1.1.336, <a href="https://www.rstudio.com/products/rstudio/download/preview/">development</a> version as of today).</p>
 <ul>
-<li>First, you may need to install bookdown in R:</li>
+<li>First, you may need to install Blogdown in R:</li>
 </ul>
-<pre class="r"><code>install.packages(&quot;bookdown&quot;)</code></pre>
+<pre class="r"><code>install.packages(&quot;blogdown&quot;)</code></pre>
 <ul>
 <li>In RStudio, select the <em>Menu &gt; File &gt; New Project</em> following the lower half of these <a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html">instructions</a>. The wizard for setting up a Hugo Blogdown project may not be yet available in your RStudio version (not for much longer probably).</li>
 </ul></li>
@@ -78,8 +78,8 @@ git pull origin master # in case you have LICENSE and Readme.md files in the Git
 <p class="caption">Selecting Hugo Blogdown format</p>
 </div>
 <div class="figure">
-<img src="/images/tuto/tuto3.png" alt="Selecting Hugo Blogdown format" />
-<p class="caption">Selecting Hugo Blogdown format</p>
+<img src="/images/tuto/tuto3.png" alt="Selecting Hugo Blogdown theme" />
+<p class="caption">Selecting Hugo Blogdown theme</p>
 </div>
 <div class="figure">
 <img src="/images/tuto/tuto4a.png" alt="A config.toml file appears" />
@@ -125,7 +125,7 @@ customJS = [&quot;js/myjs.js&quot;]</code></pre>
 <div id="custom-css" class="section level3">
 <h3>Custom css</h3>
 <p>We can add arbitrary classes to our <em>css</em> file (see above).</p>
-<p>Since I started writing in Bootstrap, I miss it a lot. Since this theme already has bootstrap classes, I brought some others I didn’t find in the theme (okay, they’re <a href="https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md">available</a> for <em>.md</em> files, but currently not for <em>.Rmd</em>)</p>
+<p>Since I started writing in Bootstrap, I miss it a lot. Since this theme already has bootstrap classes, I brought some others I didn’t find in the theme (they’re <a href="https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md">available</a> for <em>.md</em> files, but currently not for <em>.Rmd</em>)</p>
 <div class="well alert alert-danger text-center">
 <p><span class="fa fa-minus-circle"></span> alert-danger</p>
 </div>
@@ -201,18 +201,18 @@ a:hover {
 }</code></pre>
 <p>An example of the <span style="font-family:monospace; color:#b94a48"> alert-danger </span> class:</p>
 <pre class="c"><code>&lt;div class=&quot;well alert alert-danger text-center&quot;&gt;
-&lt;span class=&quot;fa fa-minus-circle&quot;&gt;&lt;/span&gt; alert-danger
+  &lt;span class=&quot;fa fa-minus-circle&quot;&gt;&lt;/span&gt; alert-danger
 &lt;/div&gt;</code></pre>
 <p>Also, we have <a href="http://fontawesome.io/icons/">font-awesome</a> icons! <span class="fa fa-gift"></span></p>
 </div>
 </div>
 <div id="site-build-with-blogdown" class="section level1">
 <h1>Site build with <span class="texttt"> blogdown </span></h1>
-<p>Once we have ready our theme, we can add some content, modifying or deleting the various examples we will find in <span class="texttt"> /content/post </span></p>
-<p>After finishing some content, we need to make use of Blogdown &amp; Hugo to compile our <em>.Rmd</em> file and create our <em>html</em> post:</p>
+<p>Once we have ready our theme, we can add some content, modifying or deleting the various examples we will find in <span class="texttt"> /content/post </span>.</p>
+<p>We need to make use of Blogdown &amp; Hugo to compile our <em>.Rmd</em> file and create our <em>html</em> post:</p>
 <pre class="r"><code>blogdown::build_site()
 blogdown::serve_site()</code></pre>
-<p>In the viewer at the right side of the IDE you can examine the resulting <em>html</em> and see if something didn’t go OK</p>
+<p>In the viewer, at the right side of the IDE you can examine the resulting <em>html</em> and see if something didn’t go OK.</p>
 </div>
 <div id="deploying-the-site" class="section level1">
 <h1>Deploying the site</h1>
@@ -225,14 +225,14 @@ git commit -m &quot;Starting my Hugo blog&quot; # adds all files to the local re
 </div>
 <div id="pushing-to-github" class="section level4">
 <h4>Pushing to GitHub</h4>
-<pre class="bash"><code>git push origin master # we push the changes of the local git repo to the remote repo (GitHub repo)</code></pre>
+<pre class="bash"><code>git push origin master # we push the changes from the local git repo to the remote repo (GitHub repo)</code></pre>
 <p>Just go to the page <span class="texttt"><a href="https://%5BUSERNAME%5D.github.io" class="uri">https://[USERNAME].github.io</a></span> and enjoy your blog!</p>
 <hr>
 </div>
 </div>
 <div id="r-code" class="section level1">
 <h1>R code</h1>
-<p>Works just the same as in Rmarkdown. R code is compiled into an <em>html</em> and published as static web content in few steps!</p>
+<p>Works just the same as in Rmarkdown. R code is compiled into an <em>html</em> and published as static web content in few steps. Welcome to the era of reproducible blogging!</p>
 <p>The figure <a href="#fig:diamond">1</a> uses the <code>ggplot2</code> library:</p>
 <pre class="r"><code>library(ggplot2)
 ggplot(diamonds, aes(x=carat, y=price, color=clarity)) + geom_point()</code></pre>
@@ -246,9 +246,14 @@ Figure 1: diamonds plot with ggplot2.
 <div id="rmd-source-code" class="section level1">
 <h1>Rmd source code</h1>
 <p>You can download it from <a href="https://github.com/aurora-mareviv/aurora-mareviv.github.io/blob/master/content/post/2017-08-17-r-rmarkdown.Rmd">here</a></p>
-<div id="welcome" class="well text-center alert alert-gray">
-<h3>
-Welcome to the era of reproducible blogging!
-</h3>
+</div>
+<div id="next-steps" class="section level1">
+<h1>Next steps</h1>
+<ul>
+<li>Try to <a href="http://justindunham.net/migrating-from-wordpress-to-hugo/">migrate</a> my <a href="https://talesofr.wordpress.com/">Wordpress blog</a> into this one. Will it ever be possible?</li>
+</ul>
+<div class="figure">
+<img src="/images/hexbins.png" />
+
 </div>
 </div>
