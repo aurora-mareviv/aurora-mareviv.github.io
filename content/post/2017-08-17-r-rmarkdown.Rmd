@@ -291,6 +291,6 @@ You can download it from [here](https://github.com/aurora-mareviv/aurora-mareviv
 
 # Next steps
 
-- Try to [migrate](http://justindunham.net/migrating-from-wordpress-to-hugo/) my [Wordpress blog](https://talesofr.wordpress.com/) into this one. Will it ever be possible?  
+- I will try to [migrate](http://justindunham.net/migrating-from-wordpress-to-hugo/) my [Wordpress blog](https://talesofr.wordpress.com/) into this one. Will it ever be possible?  
 
 ![](/images/hexbins.png)
