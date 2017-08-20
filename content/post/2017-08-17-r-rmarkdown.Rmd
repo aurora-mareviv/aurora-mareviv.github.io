@@ -96,11 +96,11 @@ Before we <span class="texttt">build</span> and <span class="texttt">serve</span
 
 To integrate with GiHub pages, there are the essential modifications at the top of our *config.toml* file: 
 
-- We need to set up the base URL to the "root" of the web page (https://[USERNAME].github.io/ in this case)
+- We need to set up the base URL to the "root" of the web page (https://[USERNAME].github.io/ in this case). We use the dot instead of "/" to allow tag URLs to link properly.  
 - By default, the web page is published in the "public" folder. We need it to be published in the root of the repository, to match the structure of the GitHub <span class="texttt">master</span> branch:  
 
 ```{r eval=FALSE}
-baseurl = "/"
+baseurl = "."
 publishDir = "."
 ```
 
