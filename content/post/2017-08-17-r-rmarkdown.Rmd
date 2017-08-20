@@ -238,33 +238,7 @@ An example of the <span style="font-family:monospace; color:#b94a48"> alert-dang
 Also, we have [font-awesome](http://fontawesome.io/icons/) icons! <span class="fa fa-gift"></span>
 
 
-### Custom javascript
 
-We can also add really cool functions to enhance our post. Click in the red button below:
-
-<div class="button well alert alert-danger text-center" id="myButton" onclick="alertColor()">
-  <span class="fa fa-minus-circle"></span> <span id="suma">alert-danger</span>
-</div>
-
-Here is the code of the button:
-
-```{c eval=FALSE}
-<div class="well alert alert-danger text-center">
-  <span class="fa fa-minus-circle"></span> alert-danger
-</div>
-```
-
-And here is the javascript function to add to <span class="texttt"> /static/js/ </span>:
-
-```{c eval=FALSE}
-function alertColor() {
-  var result = "alert-info";
-  document.getElementById("suma").innerHTML = result; 
-  document.getElementById("myButton").style.backgroundColor = "#d9edf7";
-  document.getElementById("myButton").style.color = "#3a87ad";
-  document.getElementById("myButton").style.borderColor = "#bce8f1";
-}
-```
 
 
 # Site build with <span class="texttt"> blogdown </span>
