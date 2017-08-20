@@ -1,6 +1,22 @@
-<!-- BLOGDOWN-HEAD -->
+---
+title: "R Blogdown Setup in GiHub"
+author: "Aurora Baluja"
+date: 2017-08-17T21:13:14-05:00
+categories: ["R"]
+tags: ["R Markdown", "plot", "blogdown", "#rstats"]
+thumbnailImagePosition: left
+thumbnailImage: ./images/hexbins.png
+coverImage: ./logo1.png
+metaAlignment: center
+disable_comments: true
+output:
+  blogdown::html_page:
+    toc: false
+    fig_width: 8
+    css: "/css/my-style.css"
+--- 
+
   <link rel="stylesheet" href="/css/my-style.css" type="text/css" />
-<!-- /BLOGDOWN-HEAD -->
 
 
 <div id="the-blogdown-r-package" class="section level1">
@@ -222,7 +238,7 @@ git commit -m &quot;Starting my Hugo blog&quot; # adds all files to the local re
 <pre class="r"><code>library(ggplot2)
 ggplot(diamonds, aes(x=carat, y=price, color=clarity)) + geom_point()</code></pre>
 <div class="figure"><span id="fig:diamond"></span>
-<img src="2017-08-17-r-rmarkdown_files/figure-html/diamond-1.png" alt="diamonds plot with ggplot2." width="768" />
+<img src="/.post/2017-08-17-r-rmarkdown_files/figure-html/diamond-1.png" alt="diamonds plot with ggplot2." width="768" />
 <p class="caption">
 Figure 1: diamonds plot with ggplot2.
 </p>
