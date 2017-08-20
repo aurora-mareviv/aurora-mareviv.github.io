@@ -40,7 +40,7 @@ However, I wanted to explore other blog templates, hosted in GiHub, like:
 
 The three first themes are currently linked in the [blogdown](https://bookdown.org/yihui/blogdown/other-themes.html) documentation as being most simple and easy to set up for unexperienced blog programmers, but I hope the list will grow in the following months. For those who are willing to experiment, the complete list is [here](https://themes.gohugo.io/).  
 
-Finally I chose the hugo-tranquilpeak theme, by [Thibaud Lepr&ecirc;tre](https://github.com/kakawait), for which I mostly followed Tyler Clavelle's [entry](https://tclavelle.github.io/blog/blogdown_github/) on the topic. This approach turned out to be easy and good, given some conditions:   
+Finally I chose the hugo-tranquilpeak theme, by [Louis Barranqueiro](https://github.com/LouisBarranqueiro) & [Thibaud Lepr&ecirc;tre](https://github.com/kakawait), for which I mostly followed Tyler Clavelle's [entry](https://tclavelle.github.io/blog/blogdown_github/) on the topic. This approach turned out to be easy and good, given some conditions:   
 
 - Contrary to Yihui Xie's [advice](https://bookdown.org/yihui/blogdown/deployment.html), I chose github.io to host my blog, instead of Netlify (I love my desktop integration with GitHub, so it was interesting for me not to move to another service for my static content). 
 - In my machine, I installed Blogdown & Hugo using R studio (v 1.1.336). 

@@ -3,64 +3,64 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2017/08/r-blogdown-setup-in-gihub/</loc>
+    <loc>/./2017/08/r-blogdown-setup-in-gihub/</loc>
     <lastmod>2017-08-17T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/#rstats/</loc>
-    <lastmod>2017-08-17T21:13:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/archives/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/blogdown/</loc>
+    <loc>/./tags/#rstats/</loc>
     <lastmod>2017-08-17T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/./archives/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/plot/</loc>
+    <loc>/./tags/blogdown/</loc>
     <lastmod>2017-08-17T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>/./categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/./tags/plot/</loc>
     <lastmod>2017-08-17T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/r/</loc>
+    <loc>/./post/</loc>
     <lastmod>2017-08-17T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/r-markdown/</loc>
+    <loc>/./categories/r/</loc>
     <lastmod>2017-08-17T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/./tags/r-markdown/</loc>
     <lastmod>2017-08-17T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/./tags/</loc>
+    <lastmod>2017-08-17T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/./</loc>
     <lastmod>2017-08-17T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
