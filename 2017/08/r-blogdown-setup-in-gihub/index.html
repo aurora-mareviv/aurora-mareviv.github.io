@@ -319,6 +319,7 @@ ga('send', 'pageview');
 git init # initiates repo in the directory
 git remote add origin https://github.com/[USERNAME]/[USERNAME].github.io # connects git local repo to remote Github repo
 git pull origin master # in case you have LICENSE and Readme.md files in the GitHub repo, they&#39;re downloaded</code></pre></li>
+<li>You can add a <em>.gitignore</em> file to the root directory of your repo. This tells <code>git</code> what files <em>not to add</em> to the repo, even if they are into the folder. One example of <em>.gitignore</em> file you can copy is <a href="https://github.com/aurora-mareviv/aurora-mareviv.github.io/blob/master/.gitignore">this</a>.</li>
 <li>For now, your repo is ready. We will now focus in creating &amp; customising our Blogdown.</li>
 </ul>
 </div>
@@ -553,7 +554,7 @@ Figure 1: diamonds plot with ggplot2.
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/./2017/08/new-post-in-blogdown/" data-tooltip="New Post in Blogdown">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -624,7 +625,7 @@ Figure 1: diamonds plot with ggplot2.
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/./2017/08/new-post-in-blogdown/" data-tooltip="New Post in Blogdown">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -750,6 +751,26 @@ Figure 1: diamonds plot with ggplot2.
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="/././2017/08/new-post-in-blogdown/">
+                <h3 class="media-heading">New Post in Blogdown</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">A new post in blogdown I just copied a new .Rmd file into the folder /content/post . I gave it a different name than the other post, using the date and some explanatory text.
+Then, I added an appropriate YAML heading (similar to the previous post, but changing dates and times).
+Finally I added some content to the Rmarkdown and saved the changes.
+We need to make use of Blogdown &amp; Hugo to compile our .</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="/././2017/08/r-blogdown-setup-in-gihub/">
                 <h3 class="media-heading">R Blogdown Setup in GiHub</h3>
               </a>
@@ -791,7 +812,7 @@ However, I wanted to explore other blog templates, hosted in GiHub, like:
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         2 posts found
+         3 posts found
       </p>
     </div>
   </div>

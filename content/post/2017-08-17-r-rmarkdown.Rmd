@@ -65,6 +65,7 @@ The steps I followed were:
     git pull origin master # in case you have LICENSE and Readme.md files in the GitHub repo, they're downloaded
     ``` 
 
+- You can add a *.gitignore* file to the root directory of your repo. This tells `git` what files *not to add* to the repo, even if they are into the folder.  One example of *.gitignore* file you can copy is [this](https://github.com/aurora-mareviv/aurora-mareviv.github.io/blob/master/.gitignore). 
 - For now, your repo is ready. We will now focus in creating & customising our Blogdown.
 
 #### RStudio and <span class="texttt">blogdown</span>
