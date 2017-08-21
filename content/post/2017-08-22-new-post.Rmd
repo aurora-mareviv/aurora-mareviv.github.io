@@ -24,8 +24,29 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 # A new post in <span class="texttt">blogdown</span> 
 
-I just copied a new *.Rmd* file into the folder <span class="texttt"> /content/post </span>. I gave it a different name than the other post, using the date and some explanatory text.  
-Then, I added an appropriate YAML heading (similar to the previous post, but changing dates and times).  
+I just copied a blank *.Rmd* file into the folder <span class="texttt"> /content/post </span>. I gave it a different name than the other post, using the date and some explanatory text (I called it "*2017-08-22-new-post.Rmd*").  
+
+Then, I added an appropriate YAML heading (similar to the one in the previous post, but changing dates and times).  
+
+```{r eval=FALSE}
+---
+title: "New Post in Blogdown"
+author: "1"
+date: 2017-08-22T23:41:14-05:00
+categories: ["R"]
+tags: ["R Markdown", "blogdown", "#rstats"]
+thumbnailImagePosition: left
+thumbnailImage: ./images/logo.png
+metaAlignment: center
+disable_comments: true
+output:
+  blogdown::html_page:
+    toc: false
+    fig_width: 8
+    css: "/css/my-style.css"
+--- 
+```
+
 Finally I added some content to the Rmarkdown and saved the changes.  
 
 We need to make use of Blogdown & Hugo to compile our *.Rmd* file and create our *html* post:
@@ -55,6 +76,7 @@ git commit -m "Adding a new post" # adds all files to the local repo, with a com
 git push origin master # we push the changes from the local git repo to the remote repo (GitHub repo)
 ``` 
 
+You can rinse and repeat this procedure for the rest of the posts.  
 Just go to the page <span class="texttt">https://[USERNAME].github.io</span> and enjoy your new post!
 
 <hr>
