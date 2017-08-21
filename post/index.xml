@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Tales of R - Rmarkdown Blog </title>
-    <link>/./post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on Tales of R - Rmarkdown Blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Aug 2017 23:41:14 -0500</lastBuildDate>
     
-	<atom:link href="/./post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>New Post in Blogdown</title>
-      <link>/./2017/08/new-post-in-blogdown/</link>
+      <link>/2017/08/new-post-in-blogdown/</link>
       <pubDate>Tue, 22 Aug 2017 23:41:14 -0500</pubDate>
       
-      <guid>/./2017/08/new-post-in-blogdown/</guid>
+      <guid>/2017/08/new-post-in-blogdown/</guid>
       <description>A new post in blogdown I just copied a blank .Rmd file into the folder /content/post . I gave it a different name than the other post, using the date and some explanatory text (I called it “2017-08-22-new-post.Rmd”).
 Then, I added an appropriate YAML heading (similar to the one in the previous post, but changing dates and times).
 --- title: &amp;quot;New Post in Blogdown&amp;quot; author: &amp;quot;1&amp;quot; date: 2017-08-22T23:41:14-05:00 categories: [&amp;quot;R&amp;quot;] tags: [&amp;quot;R Markdown&amp;quot;, &amp;quot;blogdown&amp;quot;, &amp;quot;#rstats&amp;quot;] thumbnailImagePosition: left thumbnailImage: .</description>
@@ -24,10 +24,10 @@ Then, I added an appropriate YAML heading (similar to the one in the previous po
     
     <item>
       <title>R Blogdown Setup in GiHub</title>
-      <link>/./2017/08/r-blogdown-setup-in-gihub/</link>
+      <link>/2017/08/r-blogdown-setup-in-gihub/</link>
       <pubDate>Thu, 17 Aug 2017 21:13:14 -0500</pubDate>
       
-      <guid>/./2017/08/r-blogdown-setup-in-gihub/</guid>
+      <guid>/2017/08/r-blogdown-setup-in-gihub/</guid>
       <description>The blogdown R package  Finally, -after 24h of failed attempts-, I could get my favourite Hugo theme up and running with R Studio and Blogdown.
 After exploring some alternatives, like Shirin’s (with Jekyll), and Amber Thomas advice (which involved Git skills beyond my basic abilities), I was able to install Yihui’s hugo-lithium-theme in a new repository.
 However, I wanted to explore other blog templates, hosted in GiHub, like:
