@@ -23,7 +23,7 @@ paginate = 7
 canonifyurls = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 enableEmoji = true
-publishDir = "/./"
+publishDir = "/"
 
 
 [permalinks]
