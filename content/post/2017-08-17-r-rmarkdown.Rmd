@@ -258,7 +258,7 @@ Here is the code of the button:
 </div>
 ```
 
-And [here](https://github.com/aurora-mareviv/aurora-mareviv.github.io/tree/master/static/js) is the javascript function to add to <span class="texttt"> /static/js/ </span>:
+And [here](https://github.com/aurora-mareviv/aurora-mareviv.github.io/blob/master/static/js/myjs.js) is the javascript function to add to <span class="texttt"> /static/js/ </span>:
 
 ```{c eval=FALSE}
 function alertColor() {
