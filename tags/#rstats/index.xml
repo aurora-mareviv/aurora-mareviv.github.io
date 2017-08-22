@@ -17,10 +17,10 @@
       <pubDate>Thu, 17 Aug 2017 21:13:14 -0500</pubDate>
       
       <guid>/./2017/08/r-blogdown-setup-in-gihub/</guid>
-      <description>The blogdown R package  Finally, -after 24h of failed attempts-, I could get my favourite Hugo theme up and running with R Studio and Blogdown.
+      <description>The blogdown R package   alert-danger
+ Finally, -after 24h of failed attempts-, I could get my favourite Hugo theme up and running with R Studio and Blogdown.
 After exploring some alternatives, like Shirin’s (with Jekyll), and Amber Thomas advice (which involved Git skills beyond my basic abilities), I was able to install Yihui’s hugo-lithium-theme in a new repository.
-However, I wanted to explore other blog templates, hosted in GiHub, like:
- gcushen/hugo-academic jpescador/hugo-future-imperfect and kakawait/hugo-tranquilpeak-theme Or this one kishaningithub/hugo-creative-portfolio-theme  The three first themes are currently linked in the blogdown documentation as being most simple and easy to set up for unexperienced blog programmers, but I hope the list will grow in the following months.</description>
+However, I wanted to explore other blog templates, hosted in GiHub, like:</description>
     </item>
     
   </channel>

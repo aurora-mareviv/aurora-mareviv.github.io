@@ -24,6 +24,10 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 # The <span class="texttt">blogdown</span> R package &nbsp; <span class="fa fa-newspaper-o"></span> 
 
+<div class="button well alert alert-danger text-center" id="myButton" onclick="alertColor()">
+  <span class="fa fa-minus-circle"></span> <span id="suma">alert-danger</span>
+</div>
+
 
 Finally, -after 24h of failed attempts-, I could get my favourite [Hugo](https://gohugo.io/) [theme](https://github.com/kakawait/hugo-tranquilpeak-theme) up and running with R Studio and [Blogdown](https://bookdown.org/yihui/blogdown/).   
 
