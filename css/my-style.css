@@ -26,6 +26,11 @@ color: #3c763d;
 background-color: #dff0d8;
 border-color: #d6e9c6;
 }
+.alert-warning{
+  color:#8a6d3b;
+  background-color:#fcf8e3;
+  border-color:#faebcc
+}
 .alert-danger,
 .alert-error {
   color: #b94a48;

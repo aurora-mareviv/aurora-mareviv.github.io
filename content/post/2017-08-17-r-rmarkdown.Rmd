@@ -148,15 +148,19 @@ We can add arbitrary classes to our *css* file (see above).
 Since I started writing in Bootstrap, I miss it a lot. Since this theme already has bootstrap classes, I brought some others I didn't find in the theme (they're [available](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md) for *.md* files, but currently not for *.Rmd*)
 
 <div class="well alert alert-danger text-center">
-<span class="fa fa-minus-circle"></span> alert-danger
+  <span class="fa fa-minus-circle"></span> alert-danger
+</div>
+
+<div class="well alert alert-warning text-center">
+  <span class="fa fa-warning"></span> alert-warning
 </div>
 
 <div class="well alert alert-success text-center">
-<span class="fa fa-check-circle"></span> alert-success
+  <span class="fa fa-check-circle"></span> alert-success
 </div>
 
 <div class="well alert alert-info text-center">
-<span class="fa fa-info-circle"></span> alert-info
+  <span class="fa fa-info-circle"></span> alert-info
 </div> 
 
 Here is my custom *css* file to date:
