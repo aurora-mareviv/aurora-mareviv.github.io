@@ -21,9 +21,6 @@ output:
 
 <div id="the-blogdown-r-package" class="section level1">
 <h1>The <span class="texttt">blogdown</span> R package   <span class="fa fa-newspaper-o"></span></h1>
-<div id="myButton" class="button well alert alert-danger text-center" onclick="alertColor()">
-<p><span class="fa fa-minus-circle"></span> <span id="suma">alert-danger</span></p>
-</div>
 <p>Finally, -after 24h of failed attempts-, I could get my favourite <a href="https://gohugo.io/">Hugo</a> <a href="https://github.com/kakawait/hugo-tranquilpeak-theme">theme</a> up and running with R Studio and <a href="https://bookdown.org/yihui/blogdown/">Blogdown</a>.</p>
 <p>After exploring some alternatives, like <a href="https://shiring.github.io/blogging/2016/12/04/diy_your_own_blog">Shirin’s</a> (with Jekyll), and <a href="https://proquestionasker.github.io/blog/Making_Site/">Amber Thomas</a> advice (which involved Git skills beyond my basic abilities), I was able to install Yihui’s <a href="https://github.com/yihui/hugo-lithium-theme">hugo-lithium-theme</a> in a new repository.</p>
 <p>However, I wanted to explore other blog templates, hosted in GiHub, like:</p>
@@ -209,6 +206,25 @@ a:hover {
   &lt;span class=&quot;fa fa-minus-circle&quot;&gt;&lt;/span&gt; alert-danger
 &lt;/div&gt;</code></pre>
 <p>Also, we have <a href="http://fontawesome.io/icons/">font-awesome</a> icons! <span class="fa fa-gift"></span></p>
+</div>
+<div id="custom-javascript" class="section level3">
+<h3>Custom javascript</h3>
+<p>We can also add really cool functions to enhance our post. Click in the red button below:</p>
+<div id="myButton" class="button well alert alert-danger text-center" onclick="alertColor()">
+<p><span id="toInfo"><span class="fa fa-minus-circle"></span> alert-danger</span></p>
+</div>
+<p>Here is the code of the button:</p>
+<pre class="c"><code>&lt;div class=&quot;well alert alert-danger text-center&quot;&gt;
+  &lt;span class=&quot;fa fa-minus-circle&quot;&gt;&lt;/span&gt; alert-danger
+&lt;/div&gt;</code></pre>
+<p>And <a href="https://github.com/aurora-mareviv/aurora-mareviv.github.io/tree/master/static/js">here</a> is the javascript function to add to <span class="texttt"> /static/js/ </span>:</p>
+<pre class="c"><code>function alertColor() {
+  var result = &quot;alert-info&quot;;
+  document.getElementById(&quot;suma&quot;).innerHTML = result; 
+  document.getElementById(&quot;myButton&quot;).style.backgroundColor = &quot;#d9edf7&quot;;
+  document.getElementById(&quot;myButton&quot;).style.color = &quot;#3a87ad&quot;;
+  document.getElementById(&quot;myButton&quot;).style.borderColor = &quot;#bce8f1&quot;;
+}</code></pre>
 </div>
 </div>
 <div id="site-build-with-blogdown" class="section level1">
