@@ -102,8 +102,8 @@ To integrate with GiHub pages, there are the essential modifications at the top 
 - By default, the web page is published in the "public" folder. We need it to be published in the root of the repository, to match the structure of the GitHub <span class="texttt">master</span> branch:  
 
 ```{r eval=FALSE}
-baseurl = "."
-publishDir = "."
+baseurl = "/."
+publishDir = "./"
 ```
 
 - Other useful global settings:  

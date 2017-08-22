@@ -100,8 +100,8 @@ git pull origin master # in case you have LICENSE and Readme.md files in the Git
 </li>
 <li>By default, the web page is published in the “public” folder. We need it to be published in the root of the repository, to match the structure of the GitHub <span class="texttt">master</span> branch:</li>
 </ul>
-<pre class="r"><code>baseurl = &quot;.&quot;
-publishDir = &quot;.&quot;</code></pre>
+<pre class="r"><code>baseurl = &quot;/.&quot;
+publishDir = &quot;./&quot;</code></pre>
 <ul>
 <li>Other useful global settings:</li>
 </ul>
@@ -239,7 +239,7 @@ git commit -m &quot;Starting my Hugo blog&quot; # adds all files to the local re
 <pre class="r"><code>library(ggplot2)
 ggplot(diamonds, aes(x=carat, y=price, color=clarity)) + geom_point()</code></pre>
 <div class="figure"><span id="fig:diamond"></span>
-<img src="/./post/2017-08-17-r-rmarkdown_files/figure-html/diamond-1.png" alt="diamonds plot with ggplot2." width="768" />
+<img src="/.post/2017-08-17-r-rmarkdown_files/figure-html/diamond-1.png" alt="diamonds plot with ggplot2." width="768" />
 <p class="caption">
 Figure 1: diamonds plot with ggplot2.
 </p>
