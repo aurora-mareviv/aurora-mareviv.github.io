@@ -35,9 +35,9 @@ publishDir = "./"
   archive = "archives"
 
 [author]
-  name = "Tales of R Blog"
-  bio = "aurora-mareviv"
-  job = "MD, PhD"
+  name = "aurora-mareviv"
+  bio = "Anesthesiologist, MD, PhD. Utter Rstats geek"
+  job = "Universidade de Santiago de Compostela"
   location = "Spain"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   gravatarEmail = ""
