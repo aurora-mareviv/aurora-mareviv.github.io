@@ -217,8 +217,8 @@ a:hover {
 <p><span id="toInfo"><span class="fa fa-minus-circle"></span> alert-danger</span></p>
 </div>
 <p>Here is the code of the button:</p>
-<pre class="c"><code>&lt;div class=&quot;well alert alert-danger text-center&quot;&gt;
-  &lt;span class=&quot;fa fa-minus-circle&quot;&gt;&lt;/span&gt; alert-danger
+<pre class="c"><code>&lt;div class=&quot;button well alert alert-danger text-center&quot; id=&quot;myButton&quot; onclick=&quot;alertColor()&quot;&gt;
+  &lt;span id=&quot;toInfo&quot;&gt; &lt;span class=&quot;fa fa-minus-circle&quot;&gt;&lt;/span&gt;alert-danger &lt;/span&gt;
 &lt;/div&gt;</code></pre>
 <p>And <a href="https://github.com/aurora-mareviv/aurora-mareviv.github.io/tree/master/static/js">here</a> is the javascript function to add to <span class="texttt"> /static/js/ </span>:</p>
 <pre class="c"><code>function alertColor() {

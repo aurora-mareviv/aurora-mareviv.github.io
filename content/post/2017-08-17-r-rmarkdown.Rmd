@@ -248,13 +248,13 @@ We can also add really cool functions to enhance our post. **Click in the red bu
 
 <div class="button well alert alert-danger text-center" id="myButton" onclick="alertColor()">
   <span id="toInfo"><span class="fa fa-minus-circle"></span> alert-danger</span>
-</div>
+</div> 
 
 Here is the code of the button:
 
 ```{c eval=FALSE}
-<div class="well alert alert-danger text-center">
-  <span class="fa fa-minus-circle"></span> alert-danger
+<div class="button well alert alert-danger text-center" id="myButton" onclick="alertColor()">
+  <span id="toInfo"> <span class="fa fa-minus-circle"></span>alert-danger </span>
 </div>
 ```
 
