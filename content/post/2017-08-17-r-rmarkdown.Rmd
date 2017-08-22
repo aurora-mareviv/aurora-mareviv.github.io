@@ -244,7 +244,7 @@ Also, we have [font-awesome](http://fontawesome.io/icons/) icons! <span class="f
 
 ### Custom javascript
 
-We can also add really cool functions to enhance our post. Click in the red button below!:
+We can also add really cool functions to enhance our post. **Click in the red button below!**:
 
 <div class="button well alert alert-danger text-center" id="myButton" onclick="alertColor()">
   <span id="toInfo"><span class="fa fa-minus-circle"></span> alert-danger</span>
@@ -262,8 +262,8 @@ And [here](https://github.com/aurora-mareviv/aurora-mareviv.github.io/tree/maste
 
 ```{c eval=FALSE}
 function alertColor() {
-  var result = "alert-info";
-  document.getElementById("suma").innerHTML = result; 
+  var result = "<span class='fa fa-info-circle'></span>&nbsp;alert-info";
+  document.getElementById("toInfo").innerHTML = result; 
   document.getElementById("myButton").style.backgroundColor = "#d9edf7";
   document.getElementById("myButton").style.color = "#3a87ad";
   document.getElementById("myButton").style.borderColor = "#bce8f1";

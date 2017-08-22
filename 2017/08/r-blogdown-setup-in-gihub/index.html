@@ -477,7 +477,7 @@ a:hover {
 </div>
 <div id="custom-javascript" class="section level3">
 <h3>Custom javascript</h3>
-<p>We can also add really cool functions to enhance our post. Click in the red button below!:</p>
+<p>We can also add really cool functions to enhance our post. <strong>Click in the red button below!</strong>:</p>
 <div id="myButton" class="button well alert alert-danger text-center" onclick="alertColor()">
 <p><span id="toInfo"><span class="fa fa-minus-circle"></span> alert-danger</span></p>
 </div>
@@ -487,8 +487,8 @@ a:hover {
 &lt;/div&gt;</code></pre>
 <p>And <a href="https://github.com/aurora-mareviv/aurora-mareviv.github.io/tree/master/static/js">here</a> is the javascript function to add to <span class="texttt"> /static/js/ </span>:</p>
 <pre class="c"><code>function alertColor() {
-  var result = &quot;alert-info&quot;;
-  document.getElementById(&quot;suma&quot;).innerHTML = result; 
+  var result = &quot;&lt;span class=&#39;fa fa-info-circle&#39;&gt;&lt;/span&gt;&amp;nbsp;alert-info&quot;;
+  document.getElementById(&quot;toInfo&quot;).innerHTML = result; 
   document.getElementById(&quot;myButton&quot;).style.backgroundColor = &quot;#d9edf7&quot;;
   document.getElementById(&quot;myButton&quot;).style.color = &quot;#3a87ad&quot;;
   document.getElementById(&quot;myButton&quot;).style.borderColor = &quot;#bce8f1&quot;;
