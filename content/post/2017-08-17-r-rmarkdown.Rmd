@@ -240,7 +240,7 @@ Also, we have [font-awesome](http://fontawesome.io/icons/) icons! <span class="f
 
 ### Custom javascript
 
-We can also add really cool functions to enhance our post. Click in the red button below:
+We can also add really cool functions to enhance our post. Click in the red button below!:
 
 <div class="button well alert alert-danger text-center" id="myButton" onclick="alertColor()">
   <span id="toInfo"><span class="fa fa-minus-circle"></span> alert-danger</span>
