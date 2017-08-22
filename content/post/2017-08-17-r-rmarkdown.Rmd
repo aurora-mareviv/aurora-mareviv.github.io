@@ -26,10 +26,13 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 Finally, -after 24h of failed attempts-, I could get my favourite [Hugo](https://gohugo.io/) [theme](https://github.com/kakawait/hugo-tranquilpeak-theme) up and running with R Studio and [Blogdown](https://bookdown.org/yihui/blogdown/).   
 
+<!--MORE-->
+
 After exploring some alternatives, like 
 [Shirin's](https://shiring.github.io/blogging/2016/12/04/diy_your_own_blog) (with Jekyll), and 
 [Amber Thomas](https://proquestionasker.github.io/blog/Making_Site/) advice (which involved Git skills beyond my basic abilities), 
 I was able to install Yihui's [hugo-lithium-theme](https://github.com/yihui/hugo-lithium-theme) in a new repository.  
+
 
 However, I wanted to explore other blog templates, hosted in GiHub, like:   
 
@@ -240,6 +243,18 @@ An example of the <span style="color:#b94a48" class="texttt"> alert-danger </spa
 ```
 
 Also, we have [font-awesome](http://fontawesome.io/icons/) icons! <span class="fa fa-gift"></span>
+
+#### Update! Hugo shortcodes in *.Rmd* !
+
+Searching through blogdown/issues in GitHub, I found this good trick by Yihui:   
+You can add Hugo shortcodes if you wrap them with the function `htmltools:HTML`
+
+```{r eval=TRUE}
+htmltools::HTML("{{< hl-text danger >}}
+              this is a highlighted danger text
+              {{< /hl-text >}}")
+```
+
 
 
 ### Custom javascript
