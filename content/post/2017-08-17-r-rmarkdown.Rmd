@@ -231,7 +231,7 @@ a:hover {
 }
 ```
 
-An example of the <span style="font-family:monospace; color:#b94a48"> alert-danger </span> class:
+An example of the <span style="color:#b94a48" class="texttt"> alert-danger </span> class:
 
 ```{c eval=FALSE}
 <div class="well alert alert-danger text-center">
