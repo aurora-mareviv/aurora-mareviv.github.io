@@ -1,4 +1,4 @@
 # aurora-mareviv github pages
 
-[`aurora-mareviv github pages`](https://aurora-mareviv.github.io/)
+[`aurora-mareviv R markdown/Hugo Blog`](https://aurora-mareviv.github.io/)
 
