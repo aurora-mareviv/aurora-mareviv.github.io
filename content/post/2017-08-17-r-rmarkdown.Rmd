@@ -9,7 +9,7 @@ thumbnailImage: ./images/hexbins.png
 coverImage: ./logo1.png
 metaAlignment: center
 disable_comments: false
-disqus_url: "https://aurora-mareviv.github.io/2017/08/r-blogdown-setup-in-gihub/"
+disqus_url: "https://aurora-mareviv.github.io/"
 disqus_identifier: "https://aurora-mareviv.github.io/2017/08/r-blogdown-setup-in-gihub/"
 disqus_title: "R Blogdown Setup in GiHub"
 output:
