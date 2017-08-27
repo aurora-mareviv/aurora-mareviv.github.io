@@ -629,7 +629,7 @@ git commit -m &quot;Adding a new post&quot; # adds all files to the local repo, 
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/./2017/08/tracking-septic-patients/" data-tooltip="Tracking Septic Patients in a Hospital">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -670,6 +670,12 @@ git commit -m &quot;Adding a new post&quot; # adds all files to the local repo, 
       </li>
     
     
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
     <li class="post-action">
       
         <a class="post-action-btn btn btn--default" href="#">
@@ -682,6 +688,10 @@ git commit -m &quot;Adding a new post&quot; # adds all files to the local repo, 
 
 
             
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
               
             
           </div>
@@ -700,7 +710,7 @@ git commit -m &quot;Adding a new post&quot; # adds all files to the local repo, 
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/./2017/08/tracking-septic-patients/" data-tooltip="Tracking Septic Patients in a Hospital">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -740,6 +750,12 @@ git commit -m &quot;Adding a new post&quot; # adds all files to the local repo, 
         </a>
       </li>
     
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
     
     <li class="post-action">
       
@@ -826,6 +842,23 @@ git commit -m &quot;Adding a new post&quot; # adds all files to the local repo, 
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="/././2017/08/tracking-septic-patients/">
+                <h3 class="media-heading">Tracking Septic Patients in a Hospital</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="/././2017/08/r-blogdown-setup-in-gihub/">
                 <h3 class="media-heading">R Blogdown Setup in GiHub</h3>
               </a>
@@ -866,7 +899,7 @@ However, I wanted to explore other blog templates, hosted in GiHub, like:</div>
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         2 posts found
+         3 posts found
       </p>
     </div>
   </div>
@@ -907,6 +940,28 @@ $(document).ready(function() {
 </script>
 
   
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/.\/2017\/08\/r-blogdown-setup-in-gihub\/';
+          
+            this.page.identifier = '\/2017\/08\/r-blogdown-setup-in-gihub\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'mareviv';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
     
   
 

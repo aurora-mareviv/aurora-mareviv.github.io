@@ -69,12 +69,6 @@ Temporary Items
 .apdisk
 
 
-####### Blogdown
-
-/blogdown/
-/public/
-
-
 ####### Jupyter
 sparkr_test.ipynb
 sparklyr_test2_primary.ipynb
@@ -118,6 +112,13 @@ venv
 
 ####### Spark
 derby.log
+
+
+####### Blogdown
+
+/blogdown/
+/public/
+/post/2017-08-27-tracking-septic-patients.Rmd
 
 
 

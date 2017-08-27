@@ -8,7 +8,7 @@ thumbnailImagePosition: left
 thumbnailImage: ./images/hexbins.png
 coverImage: ./logo1.png
 metaAlignment: center
-disable_comments: true
+disable_comments: false
 output:
   blogdown::html_page:
     toc: false
