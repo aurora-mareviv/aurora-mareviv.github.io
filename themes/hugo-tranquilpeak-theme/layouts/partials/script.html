@@ -68,3 +68,8 @@ $(document).ready(function() {
 {{ range .Site.Params.customJS }}
    <script src="{{ $.Site.BaseURL }}{{ . }}"></script>
 {{ end }}
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>

@@ -114,9 +114,9 @@ enableEmoji = true</code></pre>
 <p>We can revisit the <em>config.toml</em> file to make changes to the default settings.</p>
 <p>The logo that appears in the corner must be in the root folder. To modify it in the <em>config.toml</em>:</p>
 <pre class="r"><code>picture = &quot;logo.png&quot; # the path to the logo</code></pre>
-<p>The cover (background) image must be located in <span class="texttt"> /themes/hugo-tranquilpeak-theme/static/images </span>. To modify it in the <em>config.toml</em>:</p>
+<p>The cover (background) image must be located in <span class="texttt"> /themes/hugo-tranquilpeak-theme/static/images</span>. To modify it in the <em>config.toml</em>:</p>
 <pre class="r"><code>coverImage = &quot;myimage.jpg&quot;</code></pre>
-<p>We want some custom css and js. We need to locate it in <span class="texttt"> /static/css </span> and in <span class="texttt"> /static/js </span> respectively.</p>
+<p>We want some custom css and js. We need to locate it in <span class="texttt"> /static/css </span> and in <span class="texttt"> /static/js</span> respectively.</p>
 <pre class="r"><code># Custom CSS. Put here your custom CSS files. They are loaded after the theme CSS;
 # they have to be referred from static root. Example
 customCSS = [&quot;css/my-style.css&quot;]
@@ -206,7 +206,7 @@ a:hover {
     color: #82b5c9;
     text-decoration: none;
 }</code></pre>
-<p>An example of the <span class="texttt" style="color:#b94a48"> alert-danger </span> class:</p>
+<p>An example of the <span class="texttt" style="color:#b94a48"> alert-danger</span> class:</p>
 <pre class="c"><code>&lt;div class=&quot;well alert alert-danger text-center&quot;&gt;
   &lt;span class=&quot;fa fa-minus-circle&quot;&gt;&lt;/span&gt; alert-danger
 &lt;/div&gt;</code></pre>
@@ -233,7 +233,7 @@ You can add Hugo shortcodes if you wrap them with the function <code>htmltools:H
 <pre class="c"><code>&lt;div class=&quot;button well alert alert-danger text-center&quot; id=&quot;myButton&quot; onclick=&quot;alertColor()&quot;&gt;
   &lt;span id=&quot;toInfo&quot;&gt; &lt;span class=&quot;fa fa-minus-circle&quot;&gt;&lt;/span&gt;alert-danger &lt;/span&gt;
 &lt;/div&gt;</code></pre>
-<p>And <a href="https://github.com/aurora-mareviv/aurora-mareviv.github.io/blob/master/static/js/myjs.js">here</a> is the javascript function to add to <span class="texttt"> /static/js/ </span>:</p>
+<p>And <a href="https://github.com/aurora-mareviv/aurora-mareviv.github.io/blob/master/static/js/myjs.js">here</a> is the javascript function to add to <span class="texttt"> /static/js/</span>:</p>
 <pre class="c"><code>function alertColor() {
   var result = &quot;&lt;span class=&#39;fa fa-info-circle&#39;&gt;&lt;/span&gt;&amp;nbsp;alert-info&quot;;
   document.getElementById(&quot;toInfo&quot;).innerHTML = result; 
@@ -242,10 +242,20 @@ You can add Hugo shortcodes if you wrap them with the function <code>htmltools:H
   document.getElementById(&quot;myButton&quot;).style.borderColor = &quot;#bce8f1&quot;;
 }</code></pre>
 </div>
+<div id="mathjax" class="section level3">
+<h3>MathJax</h3>
+<p>To correctly display LaTeX formulas, we must follow Yihui Xie’s <a href="https://bookdown.org/yihui/blogdown/templates.html">advice</a>.<br />
+We will simply add the following code at the bottom of our <span class="texttt"> /themes/hugo-tranquilpeak-theme/layouts/partials/script.html </span>file:</p>
+<pre class="bash"><code>&lt;script src=&quot;//yihui.name/js/math-code.js&quot;&gt;&lt;/script&gt;
+&lt;script async
+src=&quot;//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;</code></pre>
+<p><span class="math display">\[\lim_{x \to \infty} \exp(-x) = 0\]</span></p>
+</div>
 </div>
 <div id="site-build-with-blogdown" class="section level1">
 <h1>Site build with <span class="texttt"> blogdown </span></h1>
-<p>Once we have ready our theme, we can add some content, modifying or deleting the various examples we will find in <span class="texttt"> /content/post </span>.</p>
+<p>Once we have ready our theme, we can add some content, modifying or deleting the various examples we will find in <span class="texttt"> /content/post</span>.</p>
 <p>We need to make use of Blogdown &amp; Hugo to compile our <em>.Rmd</em> file and create our <em>html</em> post:</p>
 <pre class="r"><code>blogdown::build_site()
 blogdown::serve_site()</code></pre>

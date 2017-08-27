@@ -30,11 +30,29 @@
     </item>
     
     <item>
+      <title>Diagram</title>
+      <link>/./tags/diagram/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/./tags/diagram/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Graph</title>
       <link>/./tags/graph/</link>
       <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/./tags/graph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hospital</title>
+      <link>/./tags/hospital/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/./tags/hospital/</guid>
       <description></description>
     </item>
     
@@ -62,6 +80,15 @@
       <pubDate>Thu, 17 Aug 2017 21:13:14 -0500</pubDate>
       
       <guid>/./tags/r-markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sankey</title>
+      <link>/./tags/sankey/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/./tags/sankey/</guid>
       <description></description>
     </item>
     

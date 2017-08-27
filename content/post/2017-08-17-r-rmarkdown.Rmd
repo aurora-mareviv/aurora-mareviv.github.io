@@ -126,13 +126,13 @@ The logo that appears in the corner must be in the root folder. To modify it in 
 picture = "logo.png" # the path to the logo
 ```
 
-The cover (background) image must be located in <span class="texttt"> /themes/hugo-tranquilpeak-theme/static/images </span>. To modify it in the *config.toml*:  
+The cover (background) image must be located in <span class="texttt"> /themes/hugo-tranquilpeak-theme/static/images</span>. To modify it in the *config.toml*:  
 
 ```{r eval=FALSE}
 coverImage = "myimage.jpg"
 ```
 
-We want some custom css and js. We need to locate it in <span class="texttt"> /static/css </span> and in <span class="texttt"> /static/js </span> respectively.
+We want some custom css and js. We need to locate it in <span class="texttt"> /static/css </span> and in <span class="texttt"> /static/js</span> respectively.
 
 ```{r eval=FALSE}
 # Custom CSS. Put here your custom CSS files. They are loaded after the theme CSS;
@@ -235,7 +235,7 @@ a:hover {
 }
 ```
 
-An example of the <span style="color:#b94a48" class="texttt"> alert-danger </span> class:
+An example of the <span style="color:#b94a48" class="texttt"> alert-danger</span> class:
 
 ```{c eval=FALSE}
 <div class="well alert alert-danger text-center">
@@ -274,7 +274,7 @@ Here is the code of the button:
 </div>
 ```
 
-And [here](https://github.com/aurora-mareviv/aurora-mareviv.github.io/blob/master/static/js/myjs.js) is the javascript function to add to <span class="texttt"> /static/js/ </span>:
+And [here](https://github.com/aurora-mareviv/aurora-mareviv.github.io/blob/master/static/js/myjs.js) is the javascript function to add to <span class="texttt"> /static/js/</span>:
 
 ```{c eval=FALSE}
 function alertColor() {
@@ -287,11 +287,23 @@ function alertColor() {
 ```
 
 
+### MathJax
 
+To correctly display LaTeX formulas, we must follow Yihui Xie's [advice](https://bookdown.org/yihui/blogdown/templates.html).  
+We will simply add the following code at the bottom of our <span class="texttt"> /themes/hugo-tranquilpeak-theme/layouts/partials/script.html </span>file:
+
+```{bash eval=FALSE}
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+```
+
+$$\lim_{x \to \infty} \exp(-x) = 0$$
 
 # Site build with <span class="texttt"> blogdown </span>
 
-Once we have ready our theme, we can add some content, modifying or deleting the various examples we will find in <span class="texttt"> /content/post </span>.
+Once we have ready our theme, we can add some content, modifying or deleting the various examples we will find in <span class="texttt"> /content/post</span>.
 
 We need to make use of Blogdown & Hugo to compile our *.Rmd* file and create our *html* post:
 
