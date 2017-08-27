@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Tales of R - Rmarkdown Blog</title>
-    <link>/tags/</link>
+    <link>/./tags/</link>
     <description>Recent content in Tags on Tales of R - Rmarkdown Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 27 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/./tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>#Rstats</title>
-      <link>/tags/#rstats/</link>
+      <link>/./tags/#rstats/</link>
       <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/#rstats/</guid>
+      <guid>/./tags/#rstats/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blogdown</title>
-      <link>/tags/blogdown/</link>
+      <link>/./tags/blogdown/</link>
       <pubDate>Thu, 17 Aug 2017 21:13:14 -0500</pubDate>
       
-      <guid>/tags/blogdown/</guid>
+      <guid>/./tags/blogdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Graph</title>
-      <link>/tags/graph/</link>
+      <link>/./tags/graph/</link>
       <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/graph/</guid>
+      <guid>/./tags/graph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Patients</title>
-      <link>/tags/patients/</link>
+      <link>/./tags/patients/</link>
       <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/patients/</guid>
+      <guid>/./tags/patients/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Plot</title>
-      <link>/tags/plot/</link>
+      <link>/./tags/plot/</link>
       <pubDate>Thu, 17 Aug 2017 21:13:14 -0500</pubDate>
       
-      <guid>/tags/plot/</guid>
+      <guid>/./tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Markdown</title>
-      <link>/tags/r-markdown/</link>
+      <link>/./tags/r-markdown/</link>
       <pubDate>Thu, 17 Aug 2017 21:13:14 -0500</pubDate>
       
-      <guid>/tags/r-markdown/</guid>
+      <guid>/./tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sepsis</title>
-      <link>/tags/sepsis/</link>
+      <link>/./tags/sepsis/</link>
       <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/sepsis/</guid>
+      <guid>/./tags/sepsis/</guid>
       <description></description>
     </item>
     

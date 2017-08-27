@@ -12,7 +12,7 @@
 # For developpers, if you modify this theme, put your images in `source/images` folder and
 # use grunt task `build` to synchronize assets
 
-baseurl = "https://aurora-mareviv.github.io/"
+baseurl = "/./"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Tales of R - Rmarkdown Blog"
@@ -47,7 +47,7 @@ publishDir = "./"
   # Your Twitter username without the @. E.g : thibaudlepretre
   twitter = "maureviv"
   # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
-  # googlePlus = "+ThibaudLepretre"
+  # googlePlus = "+"
 
 # Menu Configuration
 [[menu.main]]
