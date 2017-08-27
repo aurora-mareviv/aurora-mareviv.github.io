@@ -358,7 +358,8 @@ publishDir = &quot;./&quot;</code></pre>
 <ul>
 <li>Other useful global settings:</li>
 </ul>
-<pre class="r"><code>ignoreFiles = [&quot;\\.Rmd$&quot;, &quot;\\.Rmarkdown$&quot;, &quot;_files$&quot;, &quot;_cache$&quot;]
+<pre class="r"><code>draft: false # if set to true, changes will not be published
+ignoreFiles = [&quot;\\.Rmd$&quot;, &quot;\\.Rmarkdown$&quot;, &quot;_files$&quot;, &quot;_cache$&quot;]
 enableEmoji = true</code></pre>
 <div id="images-styling-paths" class="section level4">
 <h4>Images &amp; styling paths</h4>
@@ -541,6 +542,7 @@ Figure 1: diamonds plot with ggplot2.
 title: &quot;New Post in Blogdown&quot;
 author: &quot;1&quot;
 date: 2017-08-22T23:41:14-05:00
+draft: false
 categories: [&quot;R&quot;]
 tags: [&quot;R Markdown&quot;, &quot;blogdown&quot;, &quot;#rstats&quot;]
 thumbnailImagePosition: left

@@ -111,6 +111,7 @@ publishDir = "./"
 - Other useful global settings:  
 
 ```{r eval=FALSE}
+draft: false # if set to true, changes will not be published
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 enableEmoji = true
 ```
@@ -351,6 +352,7 @@ Then, I added an appropriate YAML heading (similar to the one in the previous po
 title: "New Post in Blogdown"
 author: "1"
 date: 2017-08-22T23:41:14-05:00
+draft: false
 categories: ["R"]
 tags: ["R Markdown", "blogdown", "#rstats"]
 thumbnailImagePosition: left
