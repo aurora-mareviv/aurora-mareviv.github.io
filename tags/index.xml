@@ -30,15 +30,6 @@
     </item>
     
     <item>
-      <title>Diagram</title>
-      <link>/./tags/diagram/</link>
-      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/./tags/diagram/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Graph</title>
       <link>/./tags/graph/</link>
       <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
@@ -84,11 +75,11 @@
     </item>
     
     <item>
-      <title>Sankey</title>
-      <link>/./tags/sankey/</link>
+      <title>Sankey Diagram</title>
+      <link>/./tags/sankey-diagram/</link>
       <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/./tags/sankey/</guid>
+      <guid>/./tags/sankey-diagram/</guid>
       <description></description>
     </item>
     

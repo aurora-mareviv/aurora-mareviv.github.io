@@ -35,12 +35,6 @@
   </url>
   
   <url>
-    <loc>/./tags/diagram/</loc>
-    <lastmod>2017-08-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/./tags/graph/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -89,7 +83,7 @@
   </url>
   
   <url>
-    <loc>/./tags/sankey/</loc>
+    <loc>/./tags/sankey-diagram/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
