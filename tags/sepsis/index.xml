@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sepsis on Tales of R - Rmarkdown Blog </title>
-    <link>/./tags/sepsis/</link>
-    <description>Recent content in Sepsis on Tales of R - Rmarkdown Blog </description>
+    <title>Sepsis on Tales of R - Rmarkdown Blog</title>
+    <link>/tags/sepsis/</link>
+    <description>Recent content in Sepsis on Tales of R - Rmarkdown Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 27 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/./tags/sepsis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/sepsis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tracking Septic Patients in a Hospital</title>
-      <link>/./2017/08/tracking-septic-patients/</link>
+      <link>/2017/08/tracking-septic-patients/</link>
       <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/./2017/08/tracking-septic-patients/</guid>
+      <guid>/2017/08/tracking-septic-patients/</guid>
       <description></description>
     </item>
     

@@ -12,12 +12,12 @@
 # For developpers, if you modify this theme, put your images in `source/images` folder and
 # use grunt task `build` to synchronize assets
 
-baseurl = "/./"
+baseurl = "https://aurora-mareviv.github.io/"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
-title = "Tales of R - Rmarkdown Blog "
+title = "Tales of R - Rmarkdown Blog"
 theme = "hugo-tranquilpeak-theme"
-DisqusShortname = "aurora-mareviv"
+disqusShortname = "aurora-mareviv"
 googleAnalytics = ""
 paginate = 7
 canonifyurls = true
