@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.26">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
-    <title>Tracking Septic Patients in a Hospital</title>
+    <title>Taming exam results in pdf with pdftools</title>
     <meta name="author" content="aurora-mareviv">
     <meta name="keywords" content="">
 
@@ -29,21 +29,18 @@
     
 
     
-    <meta name="description" content="Background A hospital may be defined as a place, or building, or set of facilities where patients go to receive the care they need.
-In ancient times, a hospital was not much more than a hotel for the poor, where they could stay and be cared for. Some centuries passed, and now we call hospitals to extremely complex structures, from both physical and functional perspectives.
-In this context, patients usually undergo a wide variety of diagnostic and/or therapeutic procedures.">
-    <meta property="og:description" content="Background A hospital may be defined as a place, or building, or set of facilities where patients go to receive the care they need.
-In ancient times, a hospital was not much more than a hotel for the poor, where they could stay and be cared for. Some centuries passed, and now we call hospitals to extremely complex structures, from both physical and functional perspectives.
-In this context, patients usually undergo a wide variety of diagnostic and/or therapeutic procedures.">
+    <meta name="description" content="Introduction  There are several ways to mine tables and other content from a pdf, using R. After a lot of trial &amp; error, here’s how I managed to extract global exam results from an international, massive, yearly examination, the EDAIC.
+This is my first use case of “pdf mining” with R, and also a fairly simple one. However, more complex and very fine examples of this can be found elsewhere, using both pdftools and tabulizer packages.">
+    <meta property="og:description" content="Introduction  There are several ways to mine tables and other content from a pdf, using R. After a lot of trial &amp; error, here’s how I managed to extract global exam results from an international, massive, yearly examination, the EDAIC.
+This is my first use case of “pdf mining” with R, and also a fairly simple one. However, more complex and very fine examples of this can be found elsewhere, using both pdftools and tabulizer packages.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Tracking Septic Patients in a Hospital">
-    <meta property="og:url" content="/2017/08/tracking-septic-patients/">
+    <meta property="og:title" content="Taming exam results in pdf with pdftools">
+    <meta property="og:url" content="/2017/11/taming-exam-results-with-pdftools/">
     <meta property="og:site_name" content="Tales of R - Rmarkdown Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Tales of R - Rmarkdown Blog">
-    <meta name="twitter:description" content="Background A hospital may be defined as a place, or building, or set of facilities where patients go to receive the care they need.
-In ancient times, a hospital was not much more than a hotel for the poor, where they could stay and be cared for. Some centuries passed, and now we call hospitals to extremely complex structures, from both physical and functional perspectives.
-In this context, patients usually undergo a wide variety of diagnostic and/or therapeutic procedures.">
+    <meta name="twitter:description" content="Introduction  There are several ways to mine tables and other content from a pdf, using R. After a lot of trial &amp; error, here’s how I managed to extract global exam results from an international, massive, yearly examination, the EDAIC.
+This is my first use case of “pdf mining” with R, and also a fairly simple one. However, more complex and very fine examples of this can be found elsewhere, using both pdftools and tabulizer packages.">
     
       <meta name="twitter:creator" content="@maureviv">
     
@@ -57,7 +54,7 @@ In this context, patients usually undergo a wide variety of diagnostic and/or th
     
 
     
-      <meta property="og:image" content="/images/sample.png">
+      <meta property="og:image" content="/images/adobe2.png">
     
     
     
@@ -231,14 +228,14 @@ In this context, patients usually undergo a wide variety of diagnostic and/or th
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      Tracking Septic Patients in a Hospital
+      Taming exam results in pdf with pdftools
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2017-08-27T00:00:00Z">
+    <time itemprop="datePublished" datetime="2017-11-03T00:00:00Z">
       
-  August 27, 2017
+  November 3, 2017
 
     </time>
   
@@ -247,11 +244,7 @@ In this context, patients usually undergo a wide variety of diagnostic and/or th
   
     <span>in</span>
     
-      <a class="category-link" href="/./categories/r">R</a>, 
-    
-      <a class="category-link" href="/./categories/medicine">medicine</a>, 
-    
-      <a class="category-link" href="/./categories/spanish">spanish</a>
+      <a class="category-link" href="/./categories/r">R</a>
     
   
 
@@ -262,107 +255,150 @@ In this context, patients usually undergo a wide variety of diagnostic and/or th
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <script src="/././rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-<script src="/././rmarkdown-libs/d3/d3.min.js"></script>
-<script src="/././rmarkdown-libs/sankey/sankey.js"></script>
-<script src="/././rmarkdown-libs/sankeyNetwork-binding/sankeyNetwork.js"></script>
-  <link rel="stylesheet" href="/./css/my-style.css" type="text/css" />
+              <link rel="stylesheet" href="/./css/my-style.css" type="text/css" />
 
 
-<div id="background" class="section level1">
-<h1>Background</h1>
-<p>A hospital may be defined as a place, or building, or set of facilities where patients go to receive the care they need.<br />
-In ancient times, a hospital was not much more than a hotel for the poor, where they could stay and be cared for. Some centuries passed, and now we call hospitals to extremely complex structures, from both physical and functional perspectives.<br />
-In this context, patients usually undergo a wide variety of diagnostic and/or therapeutic procedures. Sometimes even they must be transferred between medical/surgical units. This occurs when the patient has new or aggravated risks that must be tackled more closely by other specialists.<br />
-For example, when a patient develops circulatory failure (shock), it must be transferred to an ICU. When the patient recovers, it may be taken back by their original service or, if needed, be transferred to a third unit.<br />
-The following data illustrates a number of patients being transferred between different services:<br />
-<br></p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">origins</th>
-<th align="left">destinations</th>
-<th align="right">counts</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Admission</td>
-<td align="left">Traumatology</td>
-<td align="right">20</td>
-</tr>
-<tr class="even">
-<td align="left">Traumatology</td>
-<td align="left">Intensive Care</td>
-<td align="right">10</td>
-</tr>
-<tr class="odd">
-<td align="left">Intensive Care</td>
-<td align="left">Traumatology</td>
-<td align="right">9</td>
-</tr>
-</tbody>
-</table>
-<p>Sankey diagrams are a suitable way to represent this kind of data. Developed at the end of the XIX century, they convey two basic notions:</p>
-<ul>
-<li>The direction of the arrow representing flow (the <em>shape</em> of the arrow in this case).<br />
-</li>
-<li>The arrow width, which is proportional to the flow quantity.</li>
-</ul>
-<p>The interactive diagram below represents patient flows: from Admission to the Traumatology department, where some of them go to the ICU and back to Traumatology.<br />
-<br></p>
-<div id="htmlwidget-1" style="width:768px;height:480px;" class="sankeyNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"links":{"source":[0,1,2],"target":[1,2,1],"value":[20,10,9]},"nodes":{"name":["Admission","Traumatology","Intensive Care"],"group":["Admission","Traumatology","Intensive Care"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":20,"fontFamily":"Arial","nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
-<p>In a more complex setting, -such as the daily life at any hospital- such graphs may provide insight into the following variables:</p>
-<ul>
-<li>Most common pathways by groups of pathologies.<br />
-</li>
-<li>Inflow and outflow volumes between departments.<br />
-</li>
-<li>Relative weight of clinical units in processing certain groups of patients.<br />
-</li>
-<li>Help in predicting patient overflow at a given hospital section.</li>
-</ul>
+<center>
+<img src="../../../images/EDAIC.png" />
+</center>
+<div id="introduction" class="section level1">
+<h1>Introduction   <span class="fa fa-cogs"></span></h1>
+<p>There are several ways to mine tables and other content from a pdf, using R. After a lot of trial &amp; error, here’s how I managed to extract global exam results from an international, massive, yearly examination, the <a href="https://www.esahq.org/education/edaic/exam-types/part-i-examination">EDAIC</a>.</p>
+<p>This is my first use case of <em>“pdf mining”</em> with R, and also a fairly simple one. However, more complex and very fine examples of this can be found elsewhere, using both <a href="https://ropensci.org/blog/2016/03/01/pdftools-and-jeroen/"><span class="texttt">pdftools</span></a> and <a href="https://github.com/ropensci/tabulizer"><span class="texttt">tabulizer</span></a> packages.</p>
+<p>As can be seen from the original <a href="../../../content/post/data/EDAIC.pdf">pdf</a>, exam results are anonymous. They consist on a numeric, 6-digit <strong>code</strong> and a binary result: “<strong>FAIL / PASS</strong>”. I was particularly interested into seeing how many of them passed the exam, as some indirect measure of how <em>“hard”</em> it can be.</p>
 </div>
-<div id="real-world-data" class="section level1">
-<h1>Real world data</h1>
-<p>This data represents the “ins” and “outs” of patients with sepsis inside a tertiary-care hospital. Here we have the 3 forst rows:<br />
-<br></p>
+<div id="mining-the-table" class="section level1">
+<h1>Mining the table   <span class="fa fa-wrench"></span></h1>
+<p>In this case I preferred <span class="texttt">pdftools</span> as it allowed me to extract the whole content from the pdf:</p>
+<pre class="r"><code>install.packages(&quot;pdftools&quot;)</code></pre>
+<pre class="r"><code>library(pdftools) 
+txt &lt;- pdf_text(&quot;EDAIC.pdf&quot;) 
+txt[1] 
+class(txt[1]) </code></pre>
+<pre><code>  [1] &quot;EDAIC Part I 2017                                                  Overall Results\n                                         Candidate N°       Result\n                                            107131            FAIL\n                                            119233            PASS\n                                            123744            FAIL\n                                            127988            FAIL\n                                            133842            PASS\n                                            135692            PASS\n                                            140341            FAIL\n                                            142595            FAIL\n                                            151479            PASS\n                                            151632            PASS\n                                            152787            PASS\n                                            157691            PASS\n                                            158867            PASS\n                                            160211            PASS\n                                            161970            FAIL\n                                            162536            PASS\n                                            163331            PASS\n                                            164442            FAIL\n                                            164835            PASS\n                                            165734            PASS\n                                            165900            PASS\n                                            166469            PASS\n                                            167241            FAIL\n                                            167740            PASS\n                                            168151            FAIL\n                                            168331            PASS\n                                            168371            FAIL\n                                            168711            FAIL\n                                            169786            PASS\n                                            170721            FAIL\n                                            170734            FAIL\n                                            170754            PASS\n                                            170980            PASS\n                                            171894            PASS\n                                            171911            PASS\n                                            172047            FAIL\n                                            172128            PASS\n                                            172255            FAIL\n                                            172310            PASS\n                                            172706            PASS\n                                            173136            FAIL\n                                            173229            FAIL\n                                            174336            PASS\n                                            174360            PASS\n                                            175177            FAIL\n                                            175180            FAIL\n                                            175184            FAIL\nYour candidate number is indicated on your admission document        Page 1 of 52\n&quot;</code></pre>
+<pre><code>  [1] &quot;character&quot;</code></pre>
+<p>These commands return a lenghty <em>blob</em> of text. Fortunately, there are some <code>\n</code> symbols that signal the new lines in the original document.</p>
+<p>We will use these to split the <em>blob</em> into something more approachable, using <a href="https://www.tidyverse.org/"><code>tidyversal</code></a> methods…</p>
+<ul>
+<li>Split the <em>blob</em>.<br />
+</li>
+<li>Transform the resulting <code>list</code> into a <code>character vector</code> with <code>unlist</code>.<br />
+</li>
+<li>Trim leading white spaces with <code>stringr::str_trim</code>.</li>
+</ul>
+<pre class="r"><code>library(tidyverse) 
+library(stringr) 
+tx2 &lt;- strsplit(txt, &quot;\n&quot;) %&gt;% # divide by carriage returns
+  unlist() %&gt;% 
+  str_trim(side = &quot;both&quot;) # trim white spaces
+tx2[1:10]</code></pre>
+<pre><code>   [1] &quot;EDAIC Part I 2017                                                  Overall Results&quot;
+   [2] &quot;Candidate N°       Result&quot;                                                         
+   [3] &quot;107131            FAIL&quot;                                                            
+   [4] &quot;119233            PASS&quot;                                                            
+   [5] &quot;123744            FAIL&quot;                                                            
+   [6] &quot;127988            FAIL&quot;                                                            
+   [7] &quot;133842            PASS&quot;                                                            
+   [8] &quot;135692            PASS&quot;                                                            
+   [9] &quot;140341            FAIL&quot;                                                            
+  [10] &quot;142595            FAIL&quot;</code></pre>
+<ul>
+<li>Remove the very first row.<br />
+</li>
+<li>Transform into a <code>tibble</code>.</li>
+</ul>
+<pre class="r"><code>tx3 &lt;- tx2[-1] %&gt;% 
+  data_frame() 
+tx3</code></pre>
+<pre><code>  # A tibble: 2,579 x 1
+                             .
+                         &lt;chr&gt;
+   1 Candidate N°       Result
+   2    107131            FAIL
+   3    119233            PASS
+   4    123744            FAIL
+   5    127988            FAIL
+   6    133842            PASS
+   7    135692            PASS
+   8    140341            FAIL
+   9    142595            FAIL
+  10    151479            PASS
+  # ... with 2,569 more rows</code></pre>
+<ul>
+<li>Use <code>tidyr::separate</code> to split each row into two columns.<br />
+</li>
+<li>Remove all spaces.</li>
+</ul>
+<pre class="r"><code>tx4 &lt;- separate(tx3, ., c(&quot;key&quot;, &quot;value&quot;), &quot; &quot;, extra = &quot;merge&quot;) %&gt;%  
+  mutate(key = gsub(&#39;\\s+&#39;, &#39;&#39;, key)) %&gt;%
+  mutate(value = gsub(&#39;\\s+&#39;, &#39;&#39;, value)) 
+tx4</code></pre>
+<pre><code>  # A tibble: 2,579 x 2
+           key    value
+         &lt;chr&gt;    &lt;chr&gt;
+   1 Candidate N°Result
+   2    107131     FAIL
+   3    119233     PASS
+   4    123744     FAIL
+   5    127988     FAIL
+   6    133842     PASS
+   7    135692     PASS
+   8    140341     FAIL
+   9    142595     FAIL
+  10    151479     PASS
+  # ... with 2,569 more rows</code></pre>
+<ul>
+<li>Remove rows that do not represent table elements.</li>
+</ul>
+<pre class="r"><code>tx5 &lt;- tx4[grep(&#39;^[0-9]&#39;, tx4[[1]]),] 
+tx5</code></pre>
+<pre><code>  # A tibble: 2,424 x 2
+        key value
+      &lt;chr&gt; &lt;chr&gt;
+   1 107131  FAIL
+   2 119233  PASS
+   3 123744  FAIL
+   4 127988  FAIL
+   5 133842  PASS
+   6 135692  PASS
+   7 140341  FAIL
+   8 142595  FAIL
+   9 151479  PASS
+  10 151632  PASS
+  # ... with 2,414 more rows</code></pre>
+</div>
+<div id="extracting-the-results" class="section level1">
+<h1>Extracting the results   <span class="fa fa-star-o"></span></h1>
+<p>We already have the table! now it’s time to get to the summary:   <span class="fa fa-thumbs-o-up"></span>   <span class="fa fa-thumbs-o-down"></span></p>
+<pre class="r"><code>library(knitr)
+tx5 %&gt;%
+  group_by(value) %&gt;%
+  summarise (count = n()) %&gt;%
+  mutate(percent = paste( round( (count / sum(count)*100) , 1), &quot;%&quot; )) %&gt;% 
+  kable()</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th align="left">origins</th>
-<th align="left">destinations</th>
-<th align="right">counts</th>
+<th align="left">value</th>
+<th align="right">count</th>
+<th align="left">percent</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">MIV</td>
-<td align="left">MIR</td>
-<td align="right">133</td>
+<td align="left">FAIL</td>
+<td align="right">1017</td>
+<td align="left">42 %</td>
 </tr>
 <tr class="even">
-<td align="left">CGD</td>
-<td align="left">ANR</td>
-<td align="right">124</td>
-</tr>
-<tr class="odd">
-<td align="left">MIR</td>
-<td align="left">MIV</td>
-<td align="right">80</td>
+<td align="left">PASS</td>
+<td align="right">1407</td>
+<td align="left">58 %</td>
 </tr>
 </tbody>
 </table>
-<p>The following Sankey graph shows how the central units in those patient’s care are ICUs (MIV= medical ICU; ANR= surgical ICU). Internal medicine (MIR) and General surgery (CGD) are also very important in terms of volume of admissions.</p>
-<div id="htmlwidget-2" style="width:768px;height:480px;" class="sankeyNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2">{"x":{"links":{"source":[0,1,2,1,3,4,5,6,7,8,5,0,2,5,2,9,10,4,11,0,0,12,4,0,13,1,7,14,12,2,4,4,4,5,0,0,0,13,3,15,4,4,16,17,2,2,0,0,18,18,3,19,9,9,9,4,4,4,1,20,21,6,6,6,2,2,0,18,3,3,14,22,12,12,23,8,9,9,9,4,4,11,11,11,11,1,1,1,24,25,16,16,16,5,6,6,2,2,2,2,2,0,0,0,0,0,0,13,13,18,18,18,26,26,3,3,3,14,27,27,15,23,23,19,7,7,7,7,8,8,8],"target":[2,4,0,0,0,1,0,0,0,4,1,3,1,4,4,4,4,2,4,1,8,0,0,5,4,18,4,0,2,5,5,13,7,2,4,11,18,0,2,28,3,8,0,0,11,6,17,13,4,0,4,0,5,2,0,9,11,10,5,0,4,4,2,15,18,3,25,6,11,25,2,4,4,1,2,0,11,18,14,25,27,10,1,0,3,9,11,2,4,0,1,2,14,11,11,8,9,17,29,15,19,9,24,20,14,12,7,2,15,9,11,8,28,15,10,1,5,11,4,0,26,5,0,4,1,6,2,3,1,2,18],"value":[133,124,80,46,37,31,20,19,18,18,17,17,14,13,13,12,12,11,11,11,11,11,10,9,8,7,7,6,6,5,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"nodes":{"name":["MIV","CGD","MIR","NML","ANR","DIG","HEM","TRA","URO","ACV","CCA","CAR","ONC","NCR","NRL","PED","DER","END","NEF","REU","CPL","GIN","OBS","PSQ","CMF","CTO","NEO","ORL","CPE","OFT"],"group":["MIV","CGD","MIR","NML","ANR","DIG","HEM","TRA","URO","ACV","CCA","CAR","ONC","NCR","NRL","PED","DER","END","NEF","REU","CPL","GIN","OBS","PSQ","CMF","CTO","NEO","ORL","CPE","OFT"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":16,"fontFamily":"Arial","nodeWidth":15,"nodePadding":20,"units":"","margin":{"top":null,"right":20,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
-<style>
-html *
-{
-  font-size: 14px;
-}
-</style>
+<p>From these results we see that the <strong>EDAIC-Part1</strong> exam doesn’t have a particularly high clearance rate. It is currently done by medical specialists, but its dificulty relies in a <em>very</em> broad list of subjects covered, ranging from topics in applied physics, the entire human physiology, pharmacology, clinical medicine and latest guidelines.</p>
+<p>Despite being a hard test to pass -and also the exam fee-, it’s becoming increasingly popular among anesthesiologists and critical care specialists that wish to stay up-to date with the current medical knowledge and practice.</p>
 </div>
 
               
@@ -378,15 +414,13 @@ html *
                     
   <a class="tag tag--primary tag--small" href="/././/tags/#rstats/">#rstats</a>
 
-  <a class="tag tag--primary tag--small" href="/././/tags/graph/">graph</a>
+  <a class="tag tag--primary tag--small" href="/././/tags/blogdown/">blogdown</a>
 
-  <a class="tag tag--primary tag--small" href="/././/tags/patients/">patients</a>
+  <a class="tag tag--primary tag--small" href="/././/tags/pdftools/">pdftools</a>
 
-  <a class="tag tag--primary tag--small" href="/././/tags/sepsis/">sepsis</a>
+  <a class="tag tag--primary tag--small" href="/././/tags/pdf/">pdf</a>
 
-  <a class="tag tag--primary tag--small" href="/././/tags/hospital/">hospital</a>
-
-  <a class="tag tag--primary tag--small" href="/././/tags/sankey-diagram/">sankey diagram</a>
+  <a class="tag tag--primary tag--small" href="/././/tags/edaic/">edaic</a>
 
                   </div>
                 
@@ -398,7 +432,7 @@ html *
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="/./2017/11/taming-exam-results-with-pdftools/" data-tooltip="Taming exam results in pdf with pdftools">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -406,7 +440,7 @@ html *
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="/./2017/08/r-blogdown-setup-in-gihub/" data-tooltip="R Blogdown Setup in GiHub">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/./2017/08/tracking-septic-patients/" data-tooltip="Tracking Septic Patients in a Hospital">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -423,17 +457,17 @@ html *
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f.%2f2017%2f08%2ftracking-septic-patients%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f.%2f2017%2f11%2ftaming-exam-results-with-pdftools%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f.%2f2017%2f08%2ftracking-septic-patients%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f.%2f2017%2f11%2ftaming-exam-results-with-pdftools%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f.%2f2017%2f08%2ftracking-septic-patients%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f.%2f2017%2f11%2ftaming-exam-results-with-pdftools%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -479,7 +513,7 @@ html *
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="/./2017/11/taming-exam-results-with-pdftools/" data-tooltip="Taming exam results in pdf with pdftools">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -487,7 +521,7 @@ html *
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="/./2017/08/r-blogdown-setup-in-gihub/" data-tooltip="R Blogdown Setup in GiHub">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/./2017/08/tracking-septic-patients/" data-tooltip="Tracking Septic Patients in a Hospital">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -504,17 +538,17 @@ html *
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f.%2f2017%2f08%2ftracking-septic-patients%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f.%2f2017%2f11%2ftaming-exam-results-with-pdftools%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f.%2f2017%2f08%2ftracking-septic-patients%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f.%2f2017%2f11%2ftaming-exam-results-with-pdftools%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f.%2f2017%2f08%2ftracking-septic-patients%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f.%2f2017%2f11%2ftaming-exam-results-with-pdftools%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -541,17 +575,17 @@ html *
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2f.%2f2017%2f08%2ftracking-septic-patients%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2f.%2f2017%2f11%2ftaming-exam-results-with-pdftools%2f">
         <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f.%2f2017%2f08%2ftracking-septic-patients%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f.%2f2017%2f11%2ftaming-exam-results-with-pdftools%2f">
         <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2f.%2f2017%2f08%2ftracking-septic-patients%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2f.%2f2017%2f11%2ftaming-exam-results-with-pdftools%2f">
         <i class="fa fa-twitter"></i><span>Share on Twitter</span>
       </a>
     </li>
@@ -732,9 +766,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = '\/.\/2017\/08\/tracking-septic-patients\/';
+          this.page.url = '\/.\/2017\/11\/taming-exam-results-with-pdftools\/';
           
-            this.page.identifier = '\/2017\/08\/tracking-septic-patients\/'
+            this.page.identifier = '\/2017\/11\/taming-exam-results-with-pdftools\/'
           
         };
         (function() {

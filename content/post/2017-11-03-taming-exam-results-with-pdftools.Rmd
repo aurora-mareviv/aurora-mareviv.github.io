@@ -1,0 +1,137 @@
+---
+title: Taming exam results in pdf with pdftools
+author: Aurora Baluja
+date: '2017-11-03'
+slug: taming-exam-results-with-pdftools
+categories:
+  - R
+tags:
+  - '#rstats'
+  - blogdown
+  - pdftools
+  - pdf
+  - edaic
+thumbnailImagePosition: left
+thumbnailImage: ./images/adobe2.png
+metaAlignment: center
+disable_comments: true
+output:
+  blogdown::html_page:
+    toc: false
+    fig_width: 8
+    css: "/css/my-style.css"
+---
+
+```{r echo=FALSE}
+wdir <- getwd() 
+# la carpeta donde guardo los datos
+datadir <- paste(wdir, "/data", sep="")
+# y la carpeta inmediatamente por encima
+wdirRoot <- gsub("\\content\\/post", "", wdir) 
+```
+
+<center>
+![](../../../images/EDAIC.png)
+</center> 
+
+# Introduction &nbsp; <span class="fa fa-cogs"></span> 
+
+There are several ways to mine tables and other content from a pdf, using R. After a lot of trial & error, here's how I managed to extract global exam results from an international, massive, yearly examination, the [EDAIC](https://www.esahq.org/education/edaic/exam-types/part-i-examination).  
+
+This is my first use case of *"pdf mining"* with R, and also a fairly simple one.  However, more complex and very fine examples of this can be found elsewhere, using both [<span class="texttt">pdftools</span>](https://ropensci.org/blog/2016/03/01/pdftools-and-jeroen/) and [<span class="texttt">tabulizer</span>](https://github.com/ropensci/tabulizer) packages. 
+
+As can be seen from the original [pdf](../../../content/post/data/EDAIC.pdf), exam results are anonymous. They consist on a numeric, 6-digit **code** and a binary result: "**FAIL / PASS**". I was particularly interested into seeing how many of them passed the exam, as some indirect measure of how *"hard"* it can be.   
+
+# Mining the table &nbsp; <span class="fa fa-wrench"></span>
+
+In this case I preferred <span class="texttt">pdftools</span> as it allowed me to extract the whole content from the pdf:  
+
+```{r eval=FALSE}
+install.packages("pdftools")
+```
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE}
+library(pdftools) 
+txt <- pdf_text("EDAIC.pdf") 
+txt[1] 
+class(txt[1]) 
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, comment=" "}
+library(pdftools)
+ruta <- paste(datadir, "/EDAIC.pdf", sep="")
+txt <- pdf_text(ruta)
+txt[1] 
+class(txt[1]) 
+```
+
+These commands return a lenghty *blob* of text. Fortunately, there are some `\n` symbols that signal the new lines in the original document.  
+
+We will use these to split the *blob* into something more approachable, using [`tidyversal`](https://www.tidyverse.org/) methods...  
+
+- Split the *blob*.  
+- Transform the resulting `list` into a `character vector` with `unlist`.  
+- Trim leading white spaces with `stringr::str_trim`.  
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, comment=" "}
+library(tidyverse) 
+library(stringr) 
+tx2 <- strsplit(txt, "\n") %>% # divide by carriage returns
+  unlist() %>% 
+  str_trim(side = "both") # trim white spaces
+tx2[1:10]
+```
+
+- Remove the very first row.  
+- Transform into a `tibble`.  
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, comment=" "}
+tx3 <- tx2[-1] %>% 
+  data_frame() 
+tx3
+```
+
+- Use `tidyr::separate` to split each row into two columns.  
+- Remove all spaces.  
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, comment=" "}
+tx4 <- separate(tx3, ., c("key", "value"), " ", extra = "merge") %>%  
+  mutate(key = gsub('\\s+', '', key)) %>%
+  mutate(value = gsub('\\s+', '', value)) 
+tx4
+```
+
+- Remove rows that do not represent table elements.  
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, comment=" ", eval=TRUE}
+tx5 <- tx4[grep('^[0-9]', tx4[[1]]),] 
+tx5
+```
+
+# Extracting the results &nbsp; <span class="fa fa-star-o"></span>
+
+We already have the table! now it's time to get to the summary: &nbsp; <span class="fa fa-thumbs-o-up"></span> &nbsp; <span class="fa fa-thumbs-o-down"></span>   
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, comment=" "}
+library(knitr)
+tx5 %>%
+  group_by(value) %>%
+  summarise (count = n()) %>%
+  mutate(percent = paste( round( (count / sum(count)*100) , 1), "%" )) %>% 
+  kable()
+```
+
+From these results we see that the **EDAIC-Part1** exam doesn't have a particularly high clearance rate.  It is currently done by medical specialists, but its dificulty relies in a *very* broad list of subjects covered, ranging from topics in applied physics, the entire human physiology, pharmacology, clinical medicine and latest guidelines.  
+
+Despite being a hard test to pass -and also the exam fee-, it's becoming increasingly popular among anesthesiologists and critical care specialists that wish to stay up-to date with the current medical knowledge and practice.  
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, comment=" "}
+write.csv(tx5,"./data/EDAIC.csv", row.names = FALSE)
+```
+
+
+
+
+
+
