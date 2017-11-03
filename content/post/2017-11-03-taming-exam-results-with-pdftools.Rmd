@@ -31,7 +31,7 @@ wdirRoot <- gsub("\\content\\/post", "", wdir)
 ```
 
 <center>
-![](/images/EDAIC.png)
+![](./images/edaic.png)
 </center> 
 
 # Introduction &nbsp; <span class="fa fa-cogs"></span> 
