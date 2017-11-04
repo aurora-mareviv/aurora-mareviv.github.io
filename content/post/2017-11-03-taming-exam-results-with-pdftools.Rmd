@@ -12,7 +12,7 @@ tags:
   - pdf
   - edaic
 thumbnailImagePosition: left
-thumbnailImage: ./images/adobe2.png
+thumbnailImage: ./images/horse1.png
 metaAlignment: center
 disable_comments: true
 output:
