@@ -98,6 +98,7 @@ tx3
 tx4 <- separate(tx3, ., c("key", "value"), " ", extra = "merge") %>%  
   mutate(key = gsub('\\s+', '', key)) %>%
   mutate(value = gsub('\\s+', '', value)) 
+# tx4[c(1:6, 48:52),]
 tx4
 ```
 

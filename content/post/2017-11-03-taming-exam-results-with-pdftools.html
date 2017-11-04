@@ -99,6 +99,7 @@ tx3</code></pre>
 <pre class="r"><code>tx4 &lt;- separate(tx3, ., c(&quot;key&quot;, &quot;value&quot;), &quot; &quot;, extra = &quot;merge&quot;) %&gt;%  
   mutate(key = gsub(&#39;\\s+&#39;, &#39;&#39;, key)) %&gt;%
   mutate(value = gsub(&#39;\\s+&#39;, &#39;&#39;, value)) 
+# tx4[c(1:6, 48:52),]
 tx4</code></pre>
 <pre><code>  # A tibble: 2,579 x 2
            key    value
