@@ -67,7 +67,8 @@ This ensures that every folder has an unidirectional relationship with the root 
 
 I also added two more features to the tree:  
 
-- An `.Rproj` file
+- An `.Rproj` file.   
+- Parametrize the `.Rmd` file.   
 - A <span class="texttt">Git</span> repository so the tree can be conveniently cloned or downloaded:   
 
 <div class="alert alert-info">
