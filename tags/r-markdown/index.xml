@@ -6,10 +6,25 @@
     <description>Recent content in R Markdown on Tales of R - Rmarkdown Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Aug 2017 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 12 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/./tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A minimal Project Tree in R</title>
+      <link>/./2017/12/minimal-project-tree-r/</link>
+      <pubDate>Tue, 12 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/./2017/12/minimal-project-tree-r/</guid>
+      <description>Introduction  The last two days arrived at my twitter feed some discussions on how bad are the following sentences at the beginning of your R script/notebook, sparked by @JennyBryan’s slides at the IASC-ARS/NZSA Conference:
+ setwd()
+ and
+ rm(list = ls())
+ 
+ The only two things that make @JennyBryan 😤😠🤯. Instead use projects + here::here() #rstats pic.twitter.com/GwxnHePL4n
+&amp;mdash; Hadley Wickham (@hadleywickham) December 11, 2017  Blog post elaborating on my advice to avoid setwd() and rm(list = ls()) at top of an #rstats script.</description>
+    </item>
     
     <item>
       <title>R Blogdown Setup in GiHub</title>

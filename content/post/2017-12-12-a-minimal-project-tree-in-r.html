@@ -1,0 +1,169 @@
+---
+title: A minimal Project Tree in R
+author: aurora-mareviv
+date: '2017-12-12'
+slug: minimal-project-tree-r
+categories:
+  - R
+tags:
+  - '#rstats'
+  - 'R Markdown'
+  - '#tutorial'
+  - '#template'
+  - '#tidy'
+thumbnailImagePosition: left
+thumbnailImage: ./images/scheme1.png
+metaAlignment: center
+disable_comments: true
+output:
+  blogdown::html_page:
+    toc: false
+    fig_width: 8
+    css: "/css/my-style.css"
+---
+
+  <link rel="stylesheet" href="/css/my-style.css" type="text/css" />
+
+
+<div id="introduction" class="section level1">
+<h1>Introduction   <span class="fa fa-cogs"></span></h1>
+<p>The last two days arrived at my twitter feed some discussions on how bad are the following sentences at the beginning of your R script/notebook, sparked by @<a href="https://twitter.com/JennyBryan">JennyBryan</a>’s slides at the <a href="http://www.nzsa2017.com/">IASC-ARS/NZSA Conference</a>:</p>
+<blockquote>
+<p><code>setwd()</code></p>
+</blockquote>
+<p>and</p>
+<blockquote>
+<p><code>rm(list = ls())</code></p>
+</blockquote>
+<p><br></p>
+<center>
+{{< tweet 940021008764846080 >}}<br />
+{{< tweet 940436177219338240 >}} {{< tweet 940582516532105217 >}}
+</center>
+<p>Jenny Bryan offered a detailed explanation for this, as well as some fixes, in her <a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">tidyverse blog post</a>. The main idea was:</p>
+<ul>
+<li>To ensure reproducibility within a stable working directory tree. She proposes the very concise <code>here::here()</code> but other methods are available such as the <code>template</code> <a href="https://github.com/Pakillo/template">package</a>.<br />
+</li>
+<li>To avoid break havoc in other’s computers with <code>rm(list = ls())</code>!.</li>
+</ul>
+<p>All of this buzz around project self-containment and reproducibility motivated me to finish a minimal directory tree that (with some variations) I have been using for this year’s data analysis endeavours.</p>
+<p>It is a extremely simple tree which separates a <code>/data</code>, a <code>/plot</code> and an <code>/img</code> directory inside the main folder (<code>root</code>)</p>
+<ul>
+<li>The <em>data</em> folder contains both raw data and processed data files saved by R.</li>
+<li>The <em>plot</em> folder contains all the plots saved during the workflow.</li>
+<li>The <em>img</em> folder has every other image (logos, etc) that R takes as an input to build the results.</li>
+<li>Inside the <em>root</em> folder I store the main <code>.R</code> or <code>.Rmd</code> scripts.</li>
+</ul>
+<p>This ensures that every folder has an unidirectional relationship with the root folder (except the <em>data</em> dir in this case). But the important thing is that the paths in the scripts are set <em>relative</em> to the root folder, so the entire tree can be copied elsewhere and still work as expected.</p>
+<p>I also added two more features to the tree:</p>
+<ul>
+<li>An <code>.Rproj</code> file</li>
+<li>A <span class="texttt">Git</span> repository so the tree can be conveniently cloned or downloaded:</li>
+</ul>
+<div class="alert alert-info">
+<p><a href="https://github.com/aurora-mareviv/ProjectR"><code>git clone https://github.com/aurora-mareviv/ProjectR</code></a></p>
+</div>
+<p>Here is a sketch of how it works:</p>
+<p><br></p>
+<center>
+<img src="/images/scheme.png" />
+</center>
+<p>And here is the actual code of the notebook/script. I have not included regular markdown text outside the R chunks, as this template is intended to be filled with new text each time:</p>
+</div>
+<div id="script-code" class="section level1">
+<h1>Script code   <span class="fa fa-tree"></span>   <span class="fa fa-wrench"></span></h1>
+<pre class="r"><code># Installs missing libraries on render!
+list.of.packages &lt;- c(&quot;rmarkdown&quot;, &quot;dplyr&quot;, &quot;ggplot2&quot;, &quot;Rcpp&quot;, &quot;knitr&quot;, &quot;readxl&quot;)
+new.packages &lt;- list.of.packages[!(list.of.packages %in% installed.packages()[,&quot;Package&quot;])]
+if(length(new.packages)) install.packages(new.packages, repos=&#39;https://cran.rstudio.com/&#39;)</code></pre>
+<pre class="r"><code>library(dplyr)
+library(knitr)
+library(ggplot2)</code></pre>
+<div id="working-directories" class="section level2">
+<h2>Working directories</h2>
+<pre class="r"><code># directory where the notebook is
+wdir &lt;- getwd() 
+# directory where data are imported from &amp; saved to
+datadir &lt;- paste(wdir, &quot;/data&quot;, sep=&quot;&quot;)
+# directory where external images are imported from
+imgdir &lt;- paste(wdir, &quot;/img&quot;, sep=&quot;&quot;)
+# directory where plots are saved to
+plotdir &lt;- paste(wdir, &quot;/plot&quot;, sep=&quot;&quot;)
+# y la carpeta inmediatamente por encima
+wdirUp &lt;- gsub(&quot;\\ProjectR&quot;, &quot;&quot;, wdir) </code></pre>
+</div>
+<div id="data-import" class="section level2">
+<h2>Data import</h2>
+<pre class="r"><code># Data name (stored as a parameter in the Rmarkdown notebook)
+params &lt;- NULL
+params$dataname &lt;- &quot;cars&quot;</code></pre>
+<pre class="r"><code># MSEXCEL
+dataname &lt;- params$dataname # archive name
+routexl &lt;- paste(datadir, &quot;/&quot;, dataname, &quot;.xlsx&quot;, sep=&quot;&quot;)  # complete route to archive
+
+library(readxl)
+mydata &lt;- read_excel(routexl, sheet = 1)  # imports first sheet</code></pre>
+<pre class="r"><code># CSV / TSV (separated by tabs in this example)
+dataname &lt;- params$dataname # archive name
+routecsv &lt;- paste(datadir, &quot;/&quot;, dataname, &quot;.csv&quot;, sep=&quot;&quot;)  # complete route to archive
+
+mydata &lt;- read.csv(paste(routecsv, sep=&quot;&quot;), 
+         header = TRUE, 
+         sep = &quot;\t&quot;,
+         dec = &quot;,&quot;)</code></pre>
+</div>
+<div id="data-operations" class="section level2">
+<h2>Data operations</h2>
+<pre class="r"><code>head(mydata)</code></pre>
+<pre><code>     speed dist
+   1     4    2
+   2     4   10
+   3     7    4
+   4     7   22
+   5     8   16
+   6     9   10</code></pre>
+<pre class="r"><code>p1 &lt;- ggplot(cars, aes(x=speed, y=dist)) + geom_point()
+p1</code></pre>
+<p><img src="/./post/2017-12-12-a-minimal-project-tree-in-r_files/figure-html/unnamed-chunk-9-1.png" width="480" /></p>
+</div>
+<div id="save-plots" class="section level2">
+<h2>Save plots</h2>
+<pre class="r"><code># TO PDF 
+plotname1 &lt;- &quot;p1.pdf&quot;
+# TO PNG 
+plotname2 &lt;- &quot;p1.png&quot;
+
+routeplot1 &lt;- paste(plotdir, &quot;/&quot;, plotname1, sep=&quot;&quot;)
+routeplot2 &lt;- paste(plotdir, &quot;/&quot;, plotname2, sep=&quot;&quot;)
+ggsave(routeplot1)  # (see http://ggplot2.tidyverse.org/reference/ggsave.html)
+ggsave(routeplot2) </code></pre>
+</div>
+<div id="save-data" class="section level2">
+<h2>Save data</h2>
+<pre class="r"><code># RDATA
+save(mydata, file=&quot;data/mydata.RData&quot;)</code></pre>
+<pre class="r"><code># MSEXCEL # not run
+dataname2 &lt;- &quot;mydata&quot;  # name we will give to file
+routexl2 &lt;- paste(datadir, &quot;/&quot;, dataname2, &quot;.xlsx&quot;, sep=&quot;&quot;)   # complete route to future archive
+
+library(xlsx)
+write.xlsx(mydata, routexl2) # creates archive in specified route</code></pre>
+<pre class="r"><code># CSV / TSV (separated by tabs in this example)
+dataname2 &lt;- &quot;mydata&quot;  # name we will give to file
+routecsv2 &lt;- paste(datadir, &quot;/&quot;, dataname2, &quot;.csv&quot;, sep=&quot;&quot;)  # complete route to future archive
+
+write.table(mydata, file = routecsv2, append = FALSE, quote = FALSE, sep = &quot;\t &quot;,
+            eol = &quot;\n&quot;, na = &quot;NA&quot;, dec = &quot;.&quot;, row.names = FALSE,
+            col.names = TRUE)</code></pre>
+<p>This script -and the dir tree that contains it- is saving me a lot of time and headaches (where I’ve put that data?….), I hope it can be also useful for people out there!.</p>
+</div>
+</div>
+<div id="future-improvements" class="section level1">
+<h1>Future improvements</h1>
+<ul>
+<li>Add a <em>Makefile</em>?</li>
+<li>Use <a href="https://travis-ci.org/">Travis.ci</a>?<br />
+</li>
+<li>Etc…</li>
+</ul>
+</div>
