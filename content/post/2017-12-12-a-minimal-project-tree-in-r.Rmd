@@ -69,7 +69,7 @@ I also added some more features to the tree:
 
 - An `.Rproj` file.   
 - Parametrize the `.Rmd` file.   
-- A <span class="texttt">Git</span> repository so the tree can be conveniently cloned or downloaded, complete with a .gitignore file:   
+- A <span class="texttt">Git</span> repository so the tree can be conveniently cloned or downloaded, with a .gitignore file:   
 
 <div class="alert alert-info">
 [`git clone https://github.com/aurora-mareviv/ProjectR`](https://github.com/aurora-mareviv/ProjectR)  
