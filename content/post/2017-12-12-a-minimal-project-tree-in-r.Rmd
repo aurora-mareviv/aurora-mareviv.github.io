@@ -75,7 +75,7 @@ I also added some more features to the tree:
 [`git clone https://github.com/aurora-mareviv/ProjectR`](https://github.com/aurora-mareviv/ProjectR)  
 </div>
 
-Here is a sketch of how it works:  
+Here is a sketch of how it works: 
 
 <br>
 
