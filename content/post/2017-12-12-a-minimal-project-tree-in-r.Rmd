@@ -65,11 +65,11 @@ It is a extremely simple tree which separates a `/data`, a `/plot` and an `/img`
 
 This ensures that every folder has an unidirectional relationship with the root folder (except the *data* dir in this case). But the important thing is that the paths in the scripts are set *relative* to the root folder, so the entire tree can be copied elsewhere and still work as expected.  
 
-I also added two more features to the tree:  
+I also added some more features to the tree:  
 
 - An `.Rproj` file.   
 - Parametrize the `.Rmd` file.   
-- A <span class="texttt">Git</span> repository so the tree can be conveniently cloned or downloaded:   
+- A <span class="texttt">Git</span> repository so the tree can be conveniently cloned or downloaded, complete wit a .gitignore file:   
 
 <div class="alert alert-info">
 [`git clone https://github.com/aurora-mareviv/ProjectR`](https://github.com/aurora-mareviv/ProjectR)  
