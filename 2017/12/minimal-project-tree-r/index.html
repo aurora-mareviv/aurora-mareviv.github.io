@@ -346,7 +346,7 @@ datadir &lt;- paste(wdir, &quot;/data&quot;, sep=&quot;&quot;)
 imgdir &lt;- paste(wdir, &quot;/img&quot;, sep=&quot;&quot;)
 # directory where plots are saved to
 plotdir &lt;- paste(wdir, &quot;/plot&quot;, sep=&quot;&quot;)
-# y la carpeta inmediatamente por encima
+# and the folder immediately above
 wdirUp &lt;- gsub(&quot;\\ProjectR&quot;, &quot;&quot;, wdir) </code></pre>
 </div>
 <div id="data-import" class="section level2">
@@ -379,7 +379,7 @@ mydata &lt;- read.csv(paste(routecsv, sep=&quot;&quot;),
    4     7   22
    5     8   16
    6     9   10</code></pre>
-<pre class="r"><code>p1 &lt;- ggplot(cars, aes(x=speed, y=dist)) + geom_point()
+<pre class="r"><code>p1 &lt;- ggplot(mydata, aes(x=speed, y=dist)) + geom_point()
 p1</code></pre>
 <p><img src="/././post/2017-12-12-a-minimal-project-tree-in-r_files/figure-html/unnamed-chunk-9-1.png" width="480" /></p>
 </div>
