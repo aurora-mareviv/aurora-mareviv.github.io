@@ -42,7 +42,7 @@ output:
 </center>
 <p>Jenny Bryan offered a detailed explanation for this, as well as some fixes, in her <a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">tidyverse blog post</a>. The main idea was:</p>
 <ul>
-<li>To ensure reproducibility within a stable working directory tree. She proposes the very concise <code>here::here()</code> but other methods are available such as the <code>template</code> <a href="https://github.com/Pakillo/template">package</a>.<br />
+<li>To ensure reproducibility within a stable working directory tree. She proposes the very concise <code>here::here()</code> but other methods are available such as the <a href="https://github.com/Pakillo/template"><code>template</code></a> or the <a href="http://projecttemplate.net/getting_started.html"><code>ProjectTemplate</code></a> packages..<br />
 </li>
 <li>To avoid break havoc in other’s computers with <code>rm(list = ls())</code>!.</li>
 </ul>
@@ -71,12 +71,12 @@ output:
 <center>
 <img src="/images/scheme.png" />
 </center>
-<p>And here is the actual code of the notebook/script. I have not included regular markdown text outside the R chunks, as this template is intended to be filled with new text each time:</p>
+<p>And here is the actual code of the notebook/script. I have not included regular markdown text outside the R chunks, as this template is intended to be changed and filled with new text each time:</p>
 </div>
 <div id="script-code" class="section level1">
 <h1>Script code   <span class="fa fa-tree"></span>   <span class="fa fa-wrench"></span></h1>
 <pre class="r"><code># Installs missing libraries on render!
-list.of.packages &lt;- c(&quot;rmarkdown&quot;, &quot;dplyr&quot;, &quot;ggplot2&quot;, &quot;Rcpp&quot;, &quot;knitr&quot;, &quot;readxl&quot;)
+list.of.packages &lt;- c(&quot;rmarkdown&quot;, &quot;dplyr&quot;, &quot;ggplot2&quot;, &quot;Rcpp&quot;, &quot;knitr&quot;, &quot;Hmisc&quot;, &quot;readxl&quot;)
 new.packages &lt;- list.of.packages[!(list.of.packages %in% installed.packages()[,&quot;Package&quot;])]
 if(length(new.packages)) install.packages(new.packages, repos=&#39;https://cran.rstudio.com/&#39;)</code></pre>
 <pre class="r"><code>library(dplyr)
@@ -87,12 +87,12 @@ library(ggplot2)</code></pre>
 <pre class="r"><code># directory where the notebook is
 wdir &lt;- getwd() 
 # directory where data are imported from &amp; saved to
-datadir &lt;- paste(wdir, &quot;/data&quot;, sep=&quot;&quot;)
+datadir &lt;- file.path(wdir, &quot;data&quot;) # better than datadir &lt;- paste(wdir, &quot;/data&quot;, sep=&quot;&quot;)
 # directory where external images are imported from
-imgdir &lt;- paste(wdir, &quot;/img&quot;, sep=&quot;&quot;)
+imgdir &lt;- file.path(wdir, &quot;img&quot;)
 # directory where plots are saved to
-plotdir &lt;- paste(wdir, &quot;/plot&quot;, sep=&quot;&quot;)
-# y la carpeta inmediatamente por encima
+plotdir &lt;- file.path(wdir, &quot;plot&quot;)
+# the folder immediately above root
 wdirUp &lt;- gsub(&quot;\\ProjectR&quot;, &quot;&quot;, wdir) </code></pre>
 </div>
 <div id="data-import" class="section level2">
@@ -113,11 +113,12 @@ routecsv &lt;- paste(datadir, &quot;/&quot;, dataname, &quot;.csv&quot;, sep=&qu
 mydata &lt;- read.csv(paste(routecsv, sep=&quot;&quot;), 
          header = TRUE, 
          sep = &quot;\t&quot;,
-         dec = &quot;,&quot;)</code></pre>
+         dec = &quot;.&quot;)</code></pre>
 </div>
 <div id="data-operations" class="section level2">
 <h2>Data operations</h2>
-<pre class="r"><code>head(mydata)</code></pre>
+<pre class="r"><code># Hmisc::describe(mydata)
+head(mydata)</code></pre>
 <pre><code>     speed dist
    1     4    2
    2     4   10
@@ -125,7 +126,7 @@ mydata &lt;- read.csv(paste(routecsv, sep=&quot;&quot;),
    4     7   22
    5     8   16
    6     9   10</code></pre>
-<pre class="r"><code>p1 &lt;- ggplot(cars, aes(x=speed, y=dist)) + geom_point()
+<pre class="r"><code>p1 &lt;- ggplot(mydata, aes(x=speed, y=dist)) + geom_point()
 p1</code></pre>
 <p><img src="/./post/2017-12-12-a-minimal-project-tree-in-r_files/figure-html/unnamed-chunk-9-1.png" width="480" /></p>
 </div>
@@ -136,8 +137,8 @@ plotname1 &lt;- &quot;p1.pdf&quot;
 # TO PNG 
 plotname2 &lt;- &quot;p1.png&quot;
 
-routeplot1 &lt;- paste(plotdir, &quot;/&quot;, plotname1, sep=&quot;&quot;)
-routeplot2 &lt;- paste(plotdir, &quot;/&quot;, plotname2, sep=&quot;&quot;)
+routeplot1 &lt;- file.path(plotdir, plotname1)
+routeplot2 &lt;- file.path(plotdir, plotname2)
 ggsave(routeplot1)  # (see http://ggplot2.tidyverse.org/reference/ggsave.html)
 ggsave(routeplot2) </code></pre>
 </div>
