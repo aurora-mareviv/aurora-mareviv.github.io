@@ -203,6 +203,17 @@ write.table(mydata, file = routecsv2, append = FALSE, quote = FALSE, sep = "\t "
 
 This script -and the dir tree that contains it- is saving me a lot of time and headaches (where I've put that data?....), I hope it can be also useful for people out there!.   
 
+
+# Why I did this?
+
+I wanted to show a very basic directory tree (tree stump?) so it could be modified by people with no experience organising code. I am teaching R to some students (asynchronously) and need them to *really* understand how important it is to be tidy with R projects.  
+They have no idea of coding so I have to give them tools that:  
+
+- don't scare them,  
+- they can use right away with their data,  
+- make them... "learn R as you go" 😀   
+
+
 # Future improvements
 
 - Add a *Makefile*?
