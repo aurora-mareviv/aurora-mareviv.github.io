@@ -25,7 +25,7 @@ canonifyurls = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 enableEmoji = true
 publishDir = "./"
-relativeURLs = false
+relativeurls = false
 
 
 [permalinks]
