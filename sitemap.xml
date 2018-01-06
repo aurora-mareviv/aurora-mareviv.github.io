@@ -3,157 +3,157 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2017/12/minimal-project-tree-r/</loc>
+    <loc>/./2017/12/minimal-project-tree-r/</loc>
     <lastmod>2017-12-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2017/11/taming-exam-results-with-pdftools/</loc>
+    <loc>/./2017/11/taming-exam-results-with-pdftools/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2017/08/tracking-septic-patients/</loc>
+    <loc>/./2017/08/tracking-septic-patients/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2017/08/r-blogdown-setup-in-gihub/</loc>
+    <loc>/./2017/08/r-blogdown-setup-in-gihub/</loc>
     <lastmod>2017-08-17T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/#rstats/</loc>
+    <loc>/./tags/#rstats/</loc>
     <lastmod>2017-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/#template/</loc>
+    <loc>/./tags/#template/</loc>
     <lastmod>2017-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/#tidy/</loc>
+    <loc>/./tags/#tidy/</loc>
     <lastmod>2017-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/#tutorial/</loc>
+    <loc>/./tags/#tutorial/</loc>
     <lastmod>2017-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/archives/</loc>
+    <loc>/./archives/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/blogdown/</loc>
+    <loc>/./tags/blogdown/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/./categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/edaic/</loc>
+    <loc>/./tags/edaic/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/graph/</loc>
+    <loc>/./tags/graph/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/hospital/</loc>
+    <loc>/./tags/hospital/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/medicine/</loc>
+    <loc>/./categories/medicine/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/patients/</loc>
+    <loc>/./tags/patients/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/pdf/</loc>
+    <loc>/./tags/pdf/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/pdftools/</loc>
+    <loc>/./tags/pdftools/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/plot/</loc>
+    <loc>/./tags/plot/</loc>
     <lastmod>2017-08-17T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>/./post/</loc>
     <lastmod>2017-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/r/</loc>
+    <loc>/./categories/r/</loc>
     <lastmod>2017-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/r-markdown/</loc>
+    <loc>/./tags/r-markdown/</loc>
     <lastmod>2017-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/sankey-diagram/</loc>
+    <loc>/./tags/sankey-diagram/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/sepsis/</loc>
+    <loc>/./tags/sepsis/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/spanish/</loc>
+    <loc>/./categories/spanish/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/./tags/</loc>
     <lastmod>2017-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/./</loc>
     <lastmod>2017-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
