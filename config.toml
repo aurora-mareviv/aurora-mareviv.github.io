@@ -37,7 +37,7 @@ relativeURLs = false
 
 [author]
   name = "aurora-mareviv"
-  bio = "Anesthesiologist, MD, PhD. Utter Rstats geek"
+  bio = "Anesthesiologist, MD, postdoc. Utter Rstats geek"
   job = "Universidade de Santiago de Compostela"
   location = "Spain"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
