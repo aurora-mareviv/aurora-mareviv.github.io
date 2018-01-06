@@ -12,7 +12,8 @@
 # For developpers, if you modify this theme, put your images in `source/images` folder and
 # use grunt task `build` to synchronize assets
 
-baseurl = "/./"
+baseurl = "https://aurora-mareviv.github.io"
+# baseurl = "/./"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Tales of R - Rmarkdown Blog"
@@ -24,7 +25,7 @@ canonifyurls = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 enableEmoji = true
 publishDir = "./"
-relativeURLs = false
+relativeURLs = true
 
 
 [permalinks]
