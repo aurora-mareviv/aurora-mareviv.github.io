@@ -17,13 +17,14 @@ languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Tales of R - Rmarkdown Blog"
 theme = "hugo-tranquilpeak-theme"
-disqusShortname = "aurora-mareviv"
+disqusShortname = "mareviv"
 googleAnalytics = ""
 paginate = 7
 canonifyurls = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 enableEmoji = true
 publishDir = "./"
+relativeURLs = true
 
 
 [permalinks]
