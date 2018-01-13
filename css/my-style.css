@@ -55,17 +55,28 @@ border-color: #d6e9c6;
 
 
 /*link formatting*/
+:root {
+    --lightBlue: #478ca7; 
+    --lightBlue-hover: #82b5c9; 
+    --lightGreen: #4ea500; 
+    --lightGreen-hover: #73c46c; 
+    --lightRed: #c13c40; 
+    --lightRed-hover: #cf8383; 
+}
+
+
 a:link {
-	color: #478ca7;
+	color: var(--lightBlue);
 	text-decoration: none;
 } 
 
 a:visited {
-	color: #478ca7;
+	color: var(--lightBlue);
 	text-decoration: none;
 }
 
 a:hover {
-	color: #82b5c9;
+	color: var(--lightBlue-hover);
 	text-decoration: none;
 }
+

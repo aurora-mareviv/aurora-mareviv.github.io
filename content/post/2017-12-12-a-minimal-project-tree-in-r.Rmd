@@ -30,6 +30,12 @@ datadir <- paste(wdir, "/data", sep="")
 wdirRoot <- gsub("\\content\\/post", "", wdir) 
 ```
 
+<meta name="twitter:site" content="@mareviv">
+<meta name="twitter:creator" content="@mareviv">
+<meta name="twitter:description" content="A minimal Project Tree in R." />
+<meta name="twitter:title" content="Minimal Project Tree in R" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="/images/scheme.png" />
 
 # Introduction &nbsp; <span class="fa fa-cogs"></span> 
 
