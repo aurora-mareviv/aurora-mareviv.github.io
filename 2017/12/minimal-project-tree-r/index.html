@@ -347,7 +347,8 @@ imgdir &lt;- file.path(wdir, &quot;img&quot;)
 # directory where plots are saved to
 plotdir &lt;- file.path(wdir, &quot;plot&quot;)
 # the folder immediately above root
-wdirUp &lt;- gsub(&quot;\\ProjectR&quot;, &quot;&quot;, wdir) </code></pre>
+Up &lt;- paste(&quot;\\&quot;, basename(wdir), sep=&quot;&quot;)
+wdirUp &lt;- gsub(Up, &quot;&quot;, wdir) </code></pre>
 </div>
 <div id="data-import" class="section level2">
 <h2>Data import</h2>
