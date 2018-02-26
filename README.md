@@ -1,4 +1,8 @@
-# aurora-mareviv Rmarkdown blog
+# aurora-mareviv R markdown/Hugo Blog
 
-[`aurora-mareviv R markdown/Hugo Blog`](https://aurora-mareviv.github.io/)
+This blog has been moved to: 
+
+[`aurora-mareviv.github.io/talesofr`](https://aurora-mareviv.github.io/talesofr) 
+
+![](./logo.png)
 

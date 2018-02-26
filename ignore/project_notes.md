@@ -1,1 +1,0 @@
-# Project notes & ignored files
