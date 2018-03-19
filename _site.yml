@@ -1,5 +1,5 @@
 name: aurora-mareviv
-output_dir: docs
+output_dir: "."
 navbar:
   title: "<span><img id=\"logo\" style=\"width: 30px; border-radius: 15px;\" src=\"logo.png\" /></img> &nbsp; aurora-mareviv</span>"
   left:
