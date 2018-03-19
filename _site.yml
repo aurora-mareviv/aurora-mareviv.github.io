@@ -1,0 +1,27 @@
+name: aurora-mareviv
+output_dir: docs
+navbar:
+  title: "<span><img id=\"logo\" style=\"width: 30px; border-radius: 15px;\" src=\"logo.png\" /></img> &nbsp; aurora-mareviv</span>"
+  left:
+  - text: Home
+    href: index.html
+  - text: Programming
+    href: programming.html
+  - text: Blog
+    href: https://aurora-mareviv.github.io/talesofr
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    mathjax: null
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+    includes:
+      in_header: head.html
+      before_body: header.html
+      after_body: footer.html
+    css: "./assets/css/extra.css"
+    lib_dir: site_libs
+    self_contained: no
+

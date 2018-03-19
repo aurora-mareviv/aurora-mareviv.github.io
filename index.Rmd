@@ -1,0 +1,17 @@
+---
+editor_options: 
+  chunk_output_type: console
+output:
+  html_document:
+    toc: true
+---
+
+
+# Welcome to my page
+
+## Content 1
+
+Ol&aacute;!
+
+
+
