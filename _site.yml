@@ -9,6 +9,14 @@ navbar:
     href: programming.html
   - text: Blog
     href: https://aurora-mareviv.github.io/talesofr
+  right:
+    - icon: fa-rss fa-lg
+      href: https://aurora-mareviv.github.io/talesofr
+    - icon: fa-github fa-lg
+      href: http://github.com/aurora-mareviv
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/maureviv
+
 output:
   html_document:
     theme: cosmo
